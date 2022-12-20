@@ -22,20 +22,15 @@ ___
 ## Installation:
 Follow the [KMK firmware TL;DR Quick start guide](http://kmkfw.io/docs/Getting_Started/#tldr-quick-start-guide) or the steps bellow:
 
-*tl;dr: Install CircuitPython, rename microcontroller, install KMK + code.py*
+*Install CircuitPython, rename microcontroller, install KMK + `kb.py` & `main.py`*
 
-### 1) Install CircuitPython:
-1) [Download CircuitPython](https://circuitpython.org/downloads) for your microcontroller e.g. for the [RP2040 Pro Micro](https://circuitpython.org/board/sparkfun_pro_micro_rp2040/)
-2) Enter the UF2 bootloader mode on your microcontroller.\
-   Your RP2040 Pro Micro should appear as USB drive called "RPI-RP2"
-3) Drag and drop the `*circuitpython*.uf2` file (downloaded in step 1) onto your "RPI-RP2" drive.
-4) Reboot your microcontroller\
-   It should now appear as a USB drive called "CIRCUITPY"
+#### 1) Install CircuitPython:
+[Follow these steps](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython)
 
-### 2) Rename your microcontroller
-Next we rename our microcontroller / USB drives to "KLORL" (for the left keyboard side) and "KLORR" (for the right keyboard side) in order for KMK to figure out which side is which. 
+#### 2) Rename your microcontroller
+Rename your microcontrollers / USB drives to "KLORL" (for the left keyboard side) and "KLORR" (for the right keyboard side) in order for KMK to figure out which side is which. 
 
-- Follow this tutorial: ["Renaming CIRCUITPY through CircuitPython"](https://learn.adafruit.com/welcome-to-circuitpython/renaming-circuitpy#renaming-circuitpy-through-circuitpython-3014813)
+  Follow this tutorial: ["Renaming CIRCUITPY through CircuitPython"](https://learn.adafruit.com/welcome-to-circuitpython/renaming-circuitpy#renaming-circuitpy-through-circuitpython-3014813)
 
 **OR**
 
@@ -44,13 +39,9 @@ Next we rename our microcontroller / USB drives to "KLORL" (for the left keyboar
 
 After a reboot the microcontroller should now appear as "KLORL" and "KLORR" respectively.
 
-> :warning: **Single push reset button**: Reboot microcontroller - USB drive is called "CIRCUITPY" or e.g. "KLORL"
-
-> :warning: **Double push reset button**: UF2 Bootloader mode - USB drive is called "RPI-RP2"
-
-### Install KMK 
+#### Install KMK 
 1) Get [a copy](https://github.com/KMKfw/kmk_firmware/archive/refs/heads/master.zip) of KMK from the master branch 
-2) Unzip the file and copy the KMK folder and the boot.py file at the root of the USB drive (override the `boot.py` file used in step 2)
+2) Unzip the file and copy the `kmk` folder and the `boot.py` file at the root of the USB drive (override the `boot.py` file used in step 2)
 3) Download the `kb.py` & `main.py` files from this repository and also copy them onto your USB drive
 4) Reboot
 
@@ -60,6 +51,9 @@ Repeat those steps for both the left and right microcontroller.
   <img alt="KLOR KMK logo" src="images/klor_drive.png">
 </p>
 
+> :warning: **Single push reset button**: Reboot microcontroller - USB drive is called "CIRCUITPY" or e.g. "KLORL"
+
+> :warning: **Double push reset button**: UF2 Bootloader mode - USB drive is called "RPI-RP2"
 ___
    
 ### Coord mapping for other KLOR variants
