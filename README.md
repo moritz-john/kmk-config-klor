@@ -39,8 +39,8 @@ Next we rename our microcontroller / USB drives to "KLORL" (for the left keyboar
 
 **OR**
 
-- take the `rename_klor_left/boot.py` file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
-- take the `rename_klor_right/boot.py` file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
+- take the `utilities/rename_klor_left/boot.py` file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
+- take the `utilities/rename_klor_right/boot.py` file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
 
 After a reboot the microcontroller should now appear as "KLORL" and "KLORR" respectively.
 
@@ -51,7 +51,7 @@ After a reboot the microcontroller should now appear as "KLORL" and "KLORR" resp
 ### Install KMK 
 1) Get [a copy](https://github.com/KMKfw/kmk_firmware/archive/refs/heads/master.zip) of KMK from the master branch 
 2) Unzip the file and copy the KMK folder and the boot.py file at the root of the USB drive (override the `boot.py` file used in step 2)
-3) Download the `code.py` file from this repository and also copy it onto your USB drive
+3) Download the `kb.py` & `main.py` files from this repository and also copy them onto your USB drive
 4) Reboot
 
 Repeat those steps for both the left and right microcontroller.
@@ -63,7 +63,7 @@ Repeat those steps for both the left and right microcontroller.
 ___
    
 ### Coord mapping for other KLOR variants
-[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `coord_mapping/code.py` file.
+[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file.
 
 ```
 LEFT side:            Right side:
