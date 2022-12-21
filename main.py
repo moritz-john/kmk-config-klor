@@ -5,7 +5,6 @@ from kb import KMKKeyboard
 from kmk.keys import KC
 from kmk.modules.split import Split, SplitType
 from kmk.modules.layers import Layers
-from kmk.modules.encoder import EncoderHandler
 from kmk.extensions.media_keys import MediaKeys 
 
 keyboard = KMKKeyboard()
@@ -33,11 +32,18 @@ LOWER = KC.MO(1)
 # Keymap
 keyboard.keymap = [
     [  
-       #Base        |        |        |        |        |        |        | |        |        |        |        |        |        |        |
-                         KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,                        KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,         \
-               KC.N1,    KC.A,    KC.S,    KC.D,    KC.F,    KC.G,                        KC.H,    KC.J,    KC.K,    KC.L, KC.SCLN, KC.N2,  \
-               KC.N2,    KC.Z,    KC.X,    KC.C,    KC.V,    KC.B, KC.MUTE,   KC.MPLY,    KC.N,    KC.M, KC.COMM,  KC.DOT, KC.SLSH, KC.N3,  \
-                                 KC.N1,   LOWER,   KC.N3,   KC.N4,                       KC.N4,   KC.N3,  KC.SPC,   KC.N1,  
+       #BASE 
+       #     |        |        |        |        |        |        | |        |        |        |        |        |        |        |
+                  KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,                        KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,         \
+        KC.N1,    KC.A,    KC.S,    KC.D,    KC.F,    KC.G,                        KC.H,    KC.J,    KC.K,    KC.L, KC.SCLN, KC.N2,  \
+        KC.N2,    KC.Z,    KC.X,    KC.C,    KC.V,    KC.B, KC.MUTE,   KC.MPLY,    KC.N,    KC.M, KC.COMM,  KC.DOT, KC.SLSH, KC.N3,  \
+                          KC.N1,   LOWER,   KC.N3,   KC.N4,                       KC.N4,   KC.N3,  KC.SPC,   KC.N1,  
+        
+        # Encoders
+        KC.AUDIO_VOL_UP,     #Left side counterclockwise                                                                  
+        KC.AUDIO_VOL_DOWN,   #Left side clockwise 
+        KC.MEDIA_PREV_TRACK, #Right side counterclockwise                                                          
+        KC.MEDIA_NEXT_TRACK, #Right side clockwise 
     ],
     [  
        #LOWER       |        |        |        |        |        |        | |        |        |        |        |        |        |        |
@@ -47,17 +53,6 @@ keyboard.keymap = [
                                  KC.N1, _______,   KC.N3,   KC.N4,                       KC.N4,   KC.N3,  KC.SPC,   KC.N1,  
     ],
 ]
-
-
-# Encoder: Comment this out if you are not using encoders in your build
-encoder_handler = EncoderHandler()
-encoder_handler.pins = ((keyboard.encoder_pin_1, keyboard.encoder_pin_0, None, False),)
-encoder_handler.map = (
-    ((KC.VOLU, KC.VOLD),),  # Encoder function on Base layer
-    ((KC.UP, KC.DOWN),),  # Encoder function on LOWER layer
-)
-
-keyboard.modules.append(encoder_handler)
 
 
 if __name__ == '__main__':

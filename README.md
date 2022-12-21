@@ -15,9 +15,6 @@ Tested on the KLOR "SAEGEWERK" variant & RP2040 Pro Micro by SparkFun.
 - Haptic feedback
 - Pixart Paw3204 trackball
 
-other:
-- Encoder is working on the left side
-
 ___
 ## Installation:
 Follow the [KMK firmware TL;DR Quick start guide](http://kmkfw.io/docs/Getting_Started/#tldr-quick-start-guide) or the steps bellow:
