@@ -54,7 +54,7 @@ Repeat those steps for both the left and right microcontroller.
 ___
    
 ### Coord mapping for other KLOR variants
-[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file.
+[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file [HERE](utilities/coord_mapping/code.py).
 
 ```
 1)
@@ -68,7 +68,7 @@ LEFT side:            Right side:
 I assume the missing coordinates for "Polydactyl", "KONRAD", "Yubitsume" are the following:
 
 ```
-2) [Left side only as showcase]
+1) [Left side only as showcase]
 
 XXX = assumption
 
