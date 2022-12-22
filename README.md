@@ -7,21 +7,37 @@ This is a work in progress [KMK firmware](http://kmkfw.io/) for the [KLOR](https
 
 Tested on the KLOR "SAEGEWERK" variant & RP2040 Pro Micro by SparkFun.
 
-## Not yet implemented:
+**Not yet implemented:**
 
 - LED support (because my KLOR does not use LEDs)
-- OLED support
 - Speaker support
 - Haptic feedback
 - Pixart Paw3204 trackball
 
 ___
-## Installation:
+
+- [Microcontroller support](#microcontroller-support)
+- [Installation](#installation)
+    - [1) Install CircuitPython](#1-install-circuitpython)
+    - [2) Rename your microcontroller](#2-rename-your-microcontroller)
+    - [Install KMK](#install-kmk)
+- [OLED](#oled)
+- [Coord mapping for other KLOR variants](#coord-mapping-for-other-klor-variants)
+
+## Microcontroller support
+
+Update this line in `kb.py` to any supported microcontroller in `kmk/quickpin/pro_micro`:
+
+```python
+from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
+```
+
+## Installation
 Follow the [KMK firmware TL;DR Quick start guide](http://kmkfw.io/docs/Getting_Started/#tldr-quick-start-guide) or the steps bellow:
 
 *Install CircuitPython, rename microcontroller, install KMK + `kb.py` & `main.py`*
 
-#### 1) Install CircuitPython:
+#### 1) Install CircuitPython
 [Follow these steps](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython)
 
 #### 2) Rename your microcontroller
@@ -51,9 +67,25 @@ Repeat those steps for both the left and right microcontroller.
 > :warning: **Single push reset button**: Reboot microcontroller - USB drive is called "CIRCUITPY" or e.g. "KLORL"
 
 > :warning: **Double push reset button**: UF2 Bootloader mode - USB drive is called "RPI-RP2"
+
+## OLED
+
+To use OLEDs you have to first follow the installation instructions above
+
+Then:
+
+1) Download the [ adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD.zip ](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/) file
+2) Extract it
+3) Copy the **folder** called `adafruit_display_text` and the **file** called `adafruit_displayio_ssd1306.mpy` out of your extracted folder `adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD/lib/` 
+4) Paste both file & folder into the `lib` folder on your microcontroller
+
+<p>
+  <img alt="OLED lib folder" src="images/OLED_lib.png">
+</p>
+   
 ___
    
-### Coord mapping for other KLOR variants
+## Coord mapping for other KLOR variants
 [This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file [HERE](utilities/coord_mapping/code.py).
 
 ```

@@ -7,7 +7,6 @@ from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
 
-
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self):
         # create and register the scanner(s)
@@ -29,6 +28,10 @@ class KMKKeyboard(_KMKKeyboard):
     diode_orientation = DiodeOrientation.COL2ROW
     encoder_a = pins[19]
     encoder_b = pins[18]
+    SCL = pins[5]
+    SDA = pins[4]
+    rx = pins[1]
+    tx = pins[0]
     # NOQA
     # flake8: noqa
     coord_mapping = [
