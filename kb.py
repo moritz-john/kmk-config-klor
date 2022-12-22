@@ -1,9 +1,11 @@
 import board
 
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
+from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
+from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
-from kmk.scanners import DiodeOrientation
+
 
 
 class KMKKeyboard(_KMKKeyboard):
@@ -18,13 +20,15 @@ class KMKKeyboard(_KMKKeyboard):
             RotaryioEncoder(
                 pin_a=self.encoder_a,
                 pin_b=self.encoder_b,
+                # optional
+                divisor=2,
             )
         ]
-    col_pins = (board.A1, board.A0, board.SCK, board.MISO, board.MOSI, board.D21)
-    row_pins = (board.D5, board.D6, board.D7, board.D8)
+    col_pins = (pins[17], pins[16], pins[15], pins[14], pins[13], pins[12],)
+    row_pins = (pins[7], pins[8], pins[9], pins[10],)
     diode_orientation = DiodeOrientation.COL2ROW
-    encoder_a = board.A3
-    encoder_b = board.A2
+    encoder_a = pins[19]
+    encoder_b = pins[18]
     # NOQA
     # flake8: noqa
     coord_mapping = [
