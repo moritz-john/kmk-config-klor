@@ -15,6 +15,10 @@ class KMKKeyboard(_KMKKeyboard):
                 # required arguments:
                 column_pins = self.col_pins,
                 row_pins = self.row_pins,
+                # optional arguments with defaults:
+                columns_to_anodes=DiodeOrientation.COL2ROW,
+                interval=0.02,  # Debounce time in floating point seconds
+                max_events=64
             ),
             RotaryioEncoder(
                 pin_a=self.encoder_a,

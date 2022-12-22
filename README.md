@@ -20,7 +20,7 @@ ___
 - [Installation](#installation)
     - [1) Install CircuitPython](#1-install-circuitpython)
     - [2) Rename your microcontroller](#2-rename-your-microcontroller)
-    - [Install KMK](#install-kmk)
+    - [3) Install KMK](#3-install-kmk)
 - [OLED](#oled)
 - [Coord mapping for other KLOR variants](#coord-mapping-for-other-klor-variants)
 
@@ -52,7 +52,7 @@ Rename your microcontrollers / USB drives to "KLORL" (for the left keyboard side
 
 After a reboot the microcontroller should now appear as "KLORL" and "KLORR" respectively.
 
-#### Install KMK 
+#### 3) Install KMK 
 1) Get [a copy](https://github.com/KMKfw/kmk_firmware/archive/refs/heads/master.zip) of KMK from the master branch 
 2) Unzip the file and copy the `kmk` folder and the `boot.py` file at the root of the USB drive (override the `boot.py` file used in step 2)
 3) Download the `kb.py` & `main.py` files from this repository and also copy them onto your USB drive
