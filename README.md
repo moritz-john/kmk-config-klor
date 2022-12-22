@@ -16,12 +16,21 @@ Tested on the KLOR "SAEGEWERK" variant & RP2040 Pro Micro by SparkFun.
 
 ___
 
+- [Microcontroller support](#microcontroller-support)
 - [Installation](#installation)
     - [1) Install CircuitPython](#1-install-circuitpython)
     - [2) Rename your microcontroller](#2-rename-your-microcontroller)
     - [Install KMK](#install-kmk)
 - [OLED](#oled)
 - [Coord mapping for other KLOR variants](#coord-mapping-for-other-klor-variants)
+
+## Microcontroller support
+
+Update this line in `kb.py` to any supported microcontroller in `kmk/quickpin/pro_micro`:
+
+```python
+from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
+```
 
 ## Installation
 Follow the [KMK firmware TL;DR Quick start guide](http://kmkfw.io/docs/Getting_Started/#tldr-quick-start-guide) or the steps bellow:

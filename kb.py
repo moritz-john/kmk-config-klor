@@ -30,6 +30,8 @@ class KMKKeyboard(_KMKKeyboard):
     encoder_b = pins[18]
     SCL = pins[5]
     SDA = pins[4]
+    rx = pins[1]
+    tx = pins[0]
     # NOQA
     # flake8: noqa
     coord_mapping = [
