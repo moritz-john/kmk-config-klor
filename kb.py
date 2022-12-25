@@ -35,7 +35,7 @@ class KMKKeyboard(_KMKKeyboard):
     SCL = pins[5]
     SDA = pins[4]
     rx = pins[1]
-    tx = pins[0]
+    tx = pins[6]
     # NOQA
     # flake8: noqa
     coord_mapping = [
