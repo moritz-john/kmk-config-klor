@@ -10,5 +10,5 @@ Then:
 4) Paste both file & folder into the `lib` folder on your microcontroller
 
 <p>
-  <img alt="OLED lib folder" src="/images/OLED_lib.png">
+  <img alt="OLED lib folder" src="images/OLED_lib.png">
 </p>

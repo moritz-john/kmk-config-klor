@@ -1,5 +1,5 @@
 ## Coord mapping for other KLOR variants
-[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file [HERE](utilities/coord_mapping/code.py).
+[This code](http://kmkfw.io/docs/porting_to_kmk/#find-your-coord-mapping) gave me the following coord_map on my "SAEGEWERK" KLOR. You can try it on your KLOR variant with the `utilities/coord_mapping/code.py` file [HERE](/utilities/get_coord_mapping/code.py).
 
 ```
 1)
