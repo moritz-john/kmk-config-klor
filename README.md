@@ -40,3 +40,7 @@ ___
 - Haptic feedback
 - Pixart Paw3204 trackball
 
+
+### Prior art / thanks to:
+
+The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware & regicidal plutophage.
