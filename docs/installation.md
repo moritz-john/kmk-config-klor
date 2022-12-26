@@ -21,8 +21,8 @@ Rename your microcontrollers / USB drives to "KLORL" (for the left keyboard side
 
 **OR**
 
-- take the `utilities/rename_klor_left/boot.py` file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
-- take the `utilities/rename_klor_right/boot.py` file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
+- take the [`utilities/rename_klor_left/boot.py`](/utilities/rename_klor_left/boot.py) file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
+- take the [`utilities/rename_klor_right/boot.py`](/utilities/rename_klor_right/boot.py) file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
 
 After a reboot the microcontroller should now appear as "KLORL" and "KLORR" respectively.
 
