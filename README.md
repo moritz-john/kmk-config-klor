@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="KLOR KMK logo" width="500" src="images/klor_kmk.svg">
+  <img alt="KLOR KMK logo" width="500" src="docs/images/klor_kmk.svg">
 </p>
 
 
