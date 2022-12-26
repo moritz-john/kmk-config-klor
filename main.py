@@ -26,7 +26,7 @@ keyboard.modules = [split, layers_ext,]
 keyboard.extensions = [media,]
 
 
-# Comment this block out if you are not using OLEDs
+# OLED code starts here ---
 oled_ext = Oled(
     OledData(
         corner_one={0:OledReactionType.STATIC,1:["Layer"]},
@@ -38,7 +38,7 @@ oled_ext = Oled(
         flip=True,
 )
 keyboard.extensions.append(oled_ext) 
-
+# OLED code ends here ---
 
 # Key aliases
 xxxxxxx = KC.NO
