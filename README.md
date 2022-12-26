@@ -23,6 +23,9 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ### OLED support:
 [Additional steps in order for the OLEDs to work.](docs/oled.md)
 
+### Hide device storage by default
+If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
+
 
 ### Modules/extensions enabled by default:
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
@@ -43,4 +46,4 @@ ___
 
 ### Prior art / thanks to:
 
-The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware & regicidal plutophage.
+The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware & regicidal plutophage.
