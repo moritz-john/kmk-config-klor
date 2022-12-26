@@ -2,9 +2,12 @@
   <img alt="KLOR KMK logo" width="500" src="images/klor_kmk.svg">
 </p>
 
+
+# KLOR Keyboard
 > KLOR is 36-42 keys column-staggered split keyboard. It supports encoders, OLED displays, the SplitKB tenting puck and four different layouts, through break off parts.
 
 Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
+
 
 ### Installation:
 [Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py` & `main.py`
