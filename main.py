@@ -3,17 +3,22 @@ import digitalio
 
 import pwmio
 import time
-from kb import KMKKeyboard
 
+from storage import getmount
+
+from kb import KMKKeyboard
 from kmk.keys import KC
 from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
+from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 
 keyboard = KMKKeyboard()
 layers_ext = Layers()
 media = MediaKeys()
+name = str(getmount('/').label)
+
 
 split = Split(
     split_flip=True,  # If both halves are the same, but flipped, set this True
@@ -43,8 +48,10 @@ oled_ext = Oled(
 keyboard.extensions.append(oled_ext)
 # OLED code ends here ---
 
-if split.split_side == SplitSide.LEFT:
-    buzzer = pwmio.PWMOut(board.D21, variable_frequency=True)
+
+
+if name.endswith('L'):
+    buzzer = pwmio.PWMOut(keyboard.buzzer_pin, variable_frequency=True)
     OFF = 0
     ON = 2**15
     buzzer.duty_cycle = ON
