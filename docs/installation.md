@@ -35,5 +35,5 @@ After a reboot the microcontroller should now appear as "KLORL" and "KLORR" resp
 Repeat those steps for both the left and right microcontroller.
 
 <p>
-  <img alt="KLOR KMK logo" src="/images/klor_drive.png">
+  <img alt="KLOR KMK logo" src="images/klor_drive.png">
 </p>
