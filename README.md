@@ -30,7 +30,7 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
 - [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *comment the code in `main.py` out if you are not using OLEDs*
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
-- Buzzer / Speaker (via costume code)
+- Buzzer / Speaker (via custom code)
 
 
 ___
