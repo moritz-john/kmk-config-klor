@@ -24,19 +24,19 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 [Additional steps in order for the OLEDs to work.](docs/oled.md)
 
 
-### Modules/extensions  enabled by default:
+### Modules/extensions enabled by default:
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
 - [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *comment the code in `main.py` out if you are not using OLEDs*
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
+- Buzzer / Speaker (via custom code)
 
 
 ___
 ### Not yet implemented:
 
 - LED support (my KLOR does not use LEDs)
-- Speaker support
 - Haptic feedback
 - Pixart Paw3204 trackball
 
