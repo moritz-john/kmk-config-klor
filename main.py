@@ -13,6 +13,7 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
+from kmk.extensions.RGB import RGB
 
 
 keyboard = KMKKeyboard()
@@ -67,6 +68,12 @@ if name.endswith('L'):
 # Buzzer code ends here ---
 
 
+# normal RGB code starts here --
+rgb = RGB(keyboard.rgb_pixel_pin, num_pixels=21)
+keyboard.extensions.append(rgb)
+# normal RGB code ends here --
+
+
 # Key aliases
 xxxxxxx = KC.NO
 _______ = KC.TRNS
@@ -91,8 +98,8 @@ keyboard.keymap = [
     ],
     [
        #LOWER       |        |        |        |        |        |        | |        |        |        |        |        |        |        |
-                         KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,                        KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,         \
-               KC.N1,    KC.A,    KC.S,    KC.D,    KC.F,    KC.G,                        KC.H,    KC.J,    KC.K,    KC.L, KC.SCLN, KC.N2,  \
+                   KC.RGB_HUI, KC.RGB_HUD, KC.RGB_SAI, KC.RGB_SAD, KC.RGB_TOG,                        KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,         \
+              KC.RGB_VAI,  KC.RGB_VAD,    KC.S,    KC.D,    KC.F,    KC.G,                        KC.H,    KC.J,    KC.K,    KC.L, KC.SCLN, KC.N2,  \
                KC.N2,    KC.Z,    KC.X,    KC.C,    KC.V,    KC.B, KC.MPRV,   KC.MNXT,    KC.N,    KC.M, KC.COMM,  KC.DOT, KC.SLSH, KC.N3,  \
                                  KC.N1, _______,   KC.N3,   KC.N4,                       KC.N4,   KC.N3,  KC.SPC,   KC.N1,
         # Encoders

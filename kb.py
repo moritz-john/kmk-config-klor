@@ -37,6 +37,7 @@ class KMKKeyboard(_KMKKeyboard):
     rx = pins[6]
     tx = pins[1]
     buzzer_a = pins[11]
+    rgb_pixel_pin = pins[0]
     # NOQA
     # flake8: noqa
     coord_mapping = [
