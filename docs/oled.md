@@ -21,9 +21,9 @@ from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionTyp
 oled_ext = Oled(
     OledData(
         corner_one={0:OledReactionType.STATIC,1:["Layer"]},
-        corner_two={0:OledReactionType.LAYER,1:["1","2","3",]},
-        corner_three={0:OledReactionType.LAYER,1:["BASE","LOWER","RAISE",]},
-        corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","shifted",]}
+        corner_two={0:OledReactionType.LAYER,1:["0","1",]},
+        corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
+        corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
         ),
         toDisplay=OledDisplayMode.TXT,
         flip=True,
@@ -34,3 +34,14 @@ keyboard.extensions.append(oled_ext)
 
 Consider moving the line: `from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData` 
 to the top of your `main.py file` containing the rest of your `from [...] import [...]` code block.
+
+### 3) Customize your OLED code:
+When you add more layers to your keymap - also add then to this part your OLED code e.g.:
+
+```
+corner_one={0:OledReactionType.STATIC,1:["Layer"]},
+corner_two={0:OledReactionType.LAYER,1:["0","1","2","3",]},
+corner_three={0:OledReactionType.LAYER,1:["BASE","LOWER","RAISE","TESTLAYER",]},
+corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","shifted","tested",]}
+```
+
