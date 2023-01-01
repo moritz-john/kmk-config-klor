@@ -30,8 +30,9 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ### Hide device storage by default
 If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
 
+<details> <style>summary {font-size: 15pt;}</style>
+  <summary>Modules/extensions implemented</summary>
 
-### Modules/extensions implemented:
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
@@ -39,7 +40,7 @@ If you want to hide your keyboard from showing up as a USB storage [follow these
 - [RGB](http://kmkfw.io/docs/rgb) *disabled by default*
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
 - Buzzer / Speaker (via custom code)
-
+</details>
 
 ___
 ### Not yet implemented:
@@ -50,3 +51,4 @@ ___
 ### Prior art / thanks to:
 
 The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware & regicidal plutophage.
+
