@@ -42,9 +42,9 @@ keyboard.modules.append(split)
 # oled_ext = Oled(
 #     OledData(
 #         corner_one={0:OledReactionType.STATIC,1:["Layer"]},
-#         corner_two={0:OledReactionType.LAYER,1:["1","2","3",]},
-#         corner_three={0:OledReactionType.LAYER,1:["BASE","LOWER","RAISE",]},
-#         corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","shifted",]}
+#         corner_two={0:OledReactionType.LAYER,1:["0","1",]},
+#         corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
+#         corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
 #         ),
 #         toDisplay=OledDisplayMode.TXT,
 #         flip=True,
@@ -78,7 +78,7 @@ if drive_name.endswith('L'):
 # Key aliases
 xxxxxxx = KC.NO
 _______ = KC.TRNS
-RAISE = KC.MO(2)
+RAISE = KC.MO(1)
 
 # Keymap
 keyboard.keymap = [
