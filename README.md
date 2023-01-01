@@ -23,23 +23,25 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ### OLED support:
 [Additional steps in order for the OLEDs to work.](docs/oled.md)
 
+### RGB support:
+[Additional steps in order for RGB to work.](docs/rgb.md)
+
 ### Hide device storage by default
 If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
 
 
-### Modules/extensions enabled by default:
+### Modules/extensions implemented:
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
-- [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *comment the code in `main.py` out if you are not using OLEDs*
+- [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *disabled by default*
+- [RGB](http://kmkfw.io/docs/rgb) *disabled by default*
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
 - Buzzer / Speaker (via custom code)
 
 
 ___
 ### Not yet implemented:
-
-- LED support (my KLOR does not use LEDs)
 - Haptic feedback
 - Pixart Paw3204 trackball
 
