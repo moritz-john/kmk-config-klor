@@ -1,7 +1,7 @@
 import board
 
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
-from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
+from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins # Change this according to your microcontroller: https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro
 from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
@@ -36,7 +36,9 @@ class KMKKeyboard(_KMKKeyboard):
     SDA = pins[4]
     rx = pins[6]
     tx = pins[1]
-    buzzer_a = pins[11]
+    buzzer_pin = pins[11]
+    rgb_pixel_pin = pins[0]
+    rgb_num_pixels = 21 # Change this according to the LED count on one half of your KLOR variant e.g. POLYDACTYL = 21, SAEGEWERK = 18
     # NOQA
     # flake8: noqa
     coord_mapping = [
