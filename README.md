@@ -30,7 +30,7 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ### Hide device storage by default
 If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
 
-
+___
 ### Modules/extensions implemented:
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
@@ -40,9 +40,7 @@ If you want to hide your keyboard from showing up as a USB storage [follow these
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
 - Buzzer / Speaker (via custom code)
 
-
-___
-### Not yet implemented:
+### Not implemented:
 - Haptic feedback
 - Pixart Paw3204 trackball
 
