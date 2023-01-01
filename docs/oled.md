@@ -13,7 +13,8 @@ In order to use OLEDs you have to:
 </p>
 
 ### 2) Uncomment OLED code:
-Afterwards you have to uncomment the OLED code in your `main.py` file:
+Afterwards you have to uncomment the OLED code in your `main.py` file:\
+(Remove the `#` as shown below)
 
 ```
 # OLED code starts here ---
@@ -36,7 +37,7 @@ Consider moving the line: `from kmk.extensions.peg_oled_Display import Oled,Oled
 to the top of your `main.py file` containing the rest of your `from [...] import [...]` code block.
 
 ### 3) Customize your OLED code:
-When you add more layers to your keymap - also add then to this part your OLED code e.g.:
+When you add more layers to your keymap - also add them to this part your OLED code e.g.:
 
 ```
 corner_one={0:OledReactionType.STATIC,1:["Layer"]},

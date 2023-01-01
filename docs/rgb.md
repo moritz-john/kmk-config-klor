@@ -13,7 +13,8 @@ In order to use RGB you have to:
 </p>
 
 ### 2) Uncomment the RGB code:
-Afterwards you have to uncomment the RGB code in your `main.py` file:
+Afterwards you have to uncomment the RGB code in your `main.py` file:\
+(Remove the `#` as shown below)
 
 ```
 # Basic RGB code starts here --
