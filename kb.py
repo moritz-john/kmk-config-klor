@@ -6,13 +6,8 @@ from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
-try:
-    from klor_config import klor_rgb, klor_variant
-except ImportError:
-    pass
-
 class KMKKeyboard(_KMKKeyboard):
-    def __init__(self, klor_oled, klor_speaker):
+    def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
         # create and register the scanner(s)
         self.matrix = [
             MatrixScanner(
@@ -34,6 +29,36 @@ class KMKKeyboard(_KMKKeyboard):
 
         self.setup_oled(klor_oled)
         self.setup_speaker(klor_speaker)
+
+
+        if klor_rgb == 'peg_rgb':
+            from klor_peg_rgb import klor_brightness_limit
+
+            self.brightness_limit = klor_brightness_limit
+
+            if klor_variant == 'polydactyl':
+                from klor_peg_rgb import led_pos_polydactyl
+
+                self.led_key_pos = led_pos_polydactyl
+                self.num_pixels = len(led_pos_polydactyl)
+            
+            if klor_variant == 'konrad':
+                from klor_peg_rgb import led_pos_konrad
+
+                self.led_key_pos = led_pos_konrad
+                self.num_pixels = len(led_pos_konrad)
+            
+            if klor_variant == 'yubitsume':
+                from klor_peg_rgb import led_pos_yubitsume
+
+                self.led_key_pos = led_pos_yubitsume
+                self.num_pixels = len(led_pos_yubitsume)
+            
+            if klor_variant == 'saegewerk':
+                from klor_peg_rgb import led_pos_saegewerk
+                
+                self.led_key_pos = led_pos_saegewerk
+                self.num_pixels = len(led_pos_saegewerk)        
 
     def setup_oled(self, klor_oled):
         if klor_oled:
@@ -84,27 +109,7 @@ class KMKKeyboard(_KMKKeyboard):
     tx = pins[1]
     buzzer_pin = pins[11]
     rgb_pixel_pin = pins[0]
-    if klor_rgb == 'none':
-        pass
-    elif klor_rgb == 'peg_rgb' and not klor_variant == 'undefined':
-        from klor_peg_rgb import klor_brightness_limit
-        brightness_limit = klor_brightness_limit
-        if klor_variant == 'polydactyl':
-            from klor_peg_rgb import led_pos_polydactyl
-            led_key_pos = led_pos_polydactyl
-            num_pixels = len(led_pos_polydactyl)
-        elif klor_variant == 'konrad':
-            from klor_peg_rgb import led_pos_konrad
-            led_key_pos = led_pos_konrad
-            num_pixels = len(led_pos_konrad)
-        elif klor_variant == 'yubitsume':
-            from klor_peg_rgb import led_pos_yubitsume
-            led_key_pos = led_pos_yubitsume
-            num_pixels = len(led_pos_yubitsume)
-        elif klor_variant == 'saegewerk':
-            from klor_peg_rgb import led_pos_saegewerk
-            led_key_pos = led_pos_saegewerk
-            num_pixels = len(led_pos_saegewerk)
+
     # NOQA
     # flake8: noqa
     coord_mapping = [
