@@ -12,7 +12,7 @@ except ImportError:
     pass
 
 class KMKKeyboard(_KMKKeyboard):
-    def __init__(self, klor_oled):
+    def __init__(self, klor_oled, klor_speaker):
         # create and register the scanner(s)
         self.matrix = [
             MatrixScanner(
@@ -33,8 +33,9 @@ class KMKKeyboard(_KMKKeyboard):
         ]
 
         self.setup_oled(klor_oled)
+        self.setup_speaker(klor_speaker)
 
-    def setup_oled(klor_oled):
+    def setup_oled(self, klor_oled):
         if klor_oled:
             from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
 
@@ -48,8 +49,29 @@ class KMKKeyboard(_KMKKeyboard):
                     toDisplay=OledDisplayMode.TXT,
                     flip=True,
             )
-            
+
             self.extensions.append(oled_ext)            
+
+    def setup_speaker(self, klor_speaker):
+        if klor_speaker:
+            import digitalio
+            import pwmio
+            import time
+            from storage import getmount
+
+            drive_name = str(getmount('/').label)
+
+            # Play a startup beep on the left keyboard side:
+            if drive_name.endswith('L'):
+                buzzer = pwmio.PWMOut(self.buzzer_pin, variable_frequency=True)
+                OFF = 0
+                ON = 2**15
+                buzzer.duty_cycle = ON
+                buzzer.frequency = 2000
+                time.sleep(0.2)
+                buzzer.frequency = 1000
+                time.sleep(0.2)
+                buzzer.duty_cycle = OFF
 
     col_pins = (pins[17], pins[16], pins[15], pins[14], pins[13], pins[12],)
     row_pins = (pins[7], pins[8], pins[9], pins[10],)
