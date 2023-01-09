@@ -1,19 +1,17 @@
 import board
-import digitalio
-import pwmio
-import time
-
-from storage import getmount
 
 from kb import KMKKeyboard
 from kmk.keys import KC
 from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
+try:
+    from klor_config import klor_variant, klor_rgb, klor_oled, klor_speaker
+except ImportError:
+    pass
 
 
 keyboard = KMKKeyboard()
-drive_name = str(getmount('/').label)
 
 keyboard.modules.append(Layers())
 keyboard.extensions.append(MediaKeys())
@@ -21,7 +19,6 @@ keyboard.extensions.append(MediaKeys())
 
 # Enable debugging: http://kmkfw.io/docs/debugging/
 # keyboard.debug_enabled = True
-
 
 # Split code starts here ---
 split = Split(
@@ -37,42 +34,64 @@ keyboard.modules.append(split)
 # Split code ends here ---
 
 
-# # OLED code starts here ---
-# from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
-# oled_ext = Oled(
-#     OledData(
-#         corner_one={0:OledReactionType.STATIC,1:["Layer"]},
-#         corner_two={0:OledReactionType.LAYER,1:["0","1",]},
-#         corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
-#         corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
-#         ),
-#         toDisplay=OledDisplayMode.TXT,
-#         flip=True,
-# )
-# keyboard.extensions.append(oled_ext)
-# # OLED code ends here ---
+# RGB:
+if klor_rgb == 'none':
+    pass
+# basic rgb
+elif klor_rgb == 'basic_rgb' and not klor_variant == 'undefined':
+    from klor_basic_rgb import basic_rgb
+    if klor_variant == 'polydactyl':
+        basic_rgb(keyboard, pixels=21)
+    elif klor_variant == 'konrad':
+        basic_rgb(keyboard, pixels=20)
+    elif klor_variant == 'yubitsume':
+        basic_rgb(keyboard, pixels=19)
+    elif klor_variant == 'saegewerk':
+        basic_rgb(keyboard, pixels=18)
+# peg rgb
+elif klor_rgb == 'peg_rgb' and not klor_variant == 'undefined':
+    if klor_variant == 'polydactyl':
+        from klor_peg_rgb import peg_rgb_polydactyl
+        peg_rgb_polydactyl(keyboard)
+    elif klor_variant == 'konrad':
+        from klor_peg_rgb import peg_rgb_konrad
+        peg_rgb_konrad(keyboard)
+    elif klor_variant == 'yubitsume':
+        from klor_peg_rgb import peg_rgb_yubitsume
+        peg_rgb_yubitsume(keyboard)
+    elif klor_variant == 'saegewerk':
+        from klor_peg_rgb import peg_rgb_saegewerk
+        peg_rgb_saegewerk(keyboard)
+
+elif klor_rgb == 'basic_rgb' or 'peg_rgb' and klor_variant == 'undefined':
+    print:("Make sure the define your KLOR variant in the 'klor_variant' variable.")
 
 
-# # Basic RGB code starts here --
-# from kmk.extensions.RGB import RGB
-# rgb = RGB(pixel_pin=keyboard.rgb_pixel_pin, num_pixels=keyboard.rgb_num_pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
-# keyboard.extensions.append(rgb)
-# # Basic RGB code ends here --
 
 
-# Buzzer code starts here ---
-# Play a startup beep on the left keyboard side:
-if drive_name.endswith('L'):
-    buzzer = pwmio.PWMOut(keyboard.buzzer_pin, variable_frequency=True)
-    OFF = 0
-    ON = 2**15
-    buzzer.duty_cycle = ON
-    buzzer.frequency = 2000
-    time.sleep(0.2)
-    buzzer.frequency = 1000
-    time.sleep(0.2)
-    buzzer.duty_cycle = OFF
-# Buzzer code ends here ---
+# OLED:
+if klor_oled == False:
+    pass
+elif klor_oled == True:
+    from klor_oled import oled_code
+    oled_code(keyboard)
+else:
+    print("Make sure to set the variable 'klor_oled' correctly.")
+
+
+# SPEAKER:
+if klor_speaker == False:
+    pass
+elif klor_speaker == True:
+    from klor_speaker import speaker_code
+    speaker_code(keyboard)
+else:
+    print("Make sure to set the variable 'klor_speaker' correctly.")
+
+
+
+
+
 
 
 # Key aliases

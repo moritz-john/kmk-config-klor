@@ -6,6 +6,10 @@ from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
+try:
+    from klor_config import klor_rgb, klor_variant
+except ImportError:
+    pass
 
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self):
@@ -38,7 +42,27 @@ class KMKKeyboard(_KMKKeyboard):
     tx = pins[1]
     buzzer_pin = pins[11]
     rgb_pixel_pin = pins[0]
-    rgb_num_pixels = 21 # Change this according to the LED count on one half of your KLOR variant e.g. POLYDACTYL = 21, SAEGEWERK = 18
+    if klor_rgb == 'none':
+        pass
+    elif klor_rgb == 'peg_rgb' and not klor_variant == 'undefined':
+        from klor_peg_rgb import klor_brightness_limit
+        brightness_limit = klor_brightness_limit
+        if klor_variant == 'polydactyl':
+            from klor_peg_rgb import led_pos_polydactyl
+            led_key_pos = led_pos_polydactyl
+            num_pixels = len(led_pos_polydactyl)
+        elif klor_variant == 'konrad':
+            from klor_peg_rgb import led_pos_konrad
+            led_key_pos = led_pos_konrad
+            num_pixels = len(led_pos_konrad)
+        elif klor_variant == 'yubitsume':
+            from klor_peg_rgb import led_pos_yubitsume
+            led_key_pos = led_pos_yubitsume
+            num_pixels = len(led_pos_yubitsume)
+        elif klor_variant == 'saegewerk':
+            from klor_peg_rgb import led_pos_saegewerk
+            led_key_pos = led_pos_saegewerk
+            num_pixels = len(led_pos_saegewerk)
     # NOQA
     # flake8: noqa
     coord_mapping = [
