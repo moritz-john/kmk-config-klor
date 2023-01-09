@@ -12,7 +12,7 @@ except ImportError:
     pass
 
 class KMKKeyboard(_KMKKeyboard):
-    def __init__(self):
+    def __init__(self, klor_oled):
         # create and register the scanner(s)
         self.matrix = [
             MatrixScanner(
@@ -31,6 +31,26 @@ class KMKKeyboard(_KMKKeyboard):
                 divisor=2,
             )
         ]
+
+        self.setup_oled(klor_oled)
+
+    def setup_oled(klor_oled):
+        if klor_oled:
+            from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
+
+            oled_ext = Oled(
+                OledData(
+                    corner_one={0:OledReactionType.STATIC,1:["Layer"]},
+                    corner_two={0:OledReactionType.LAYER,1:["0","1",]},
+                    corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
+                    corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
+                    ),
+                    toDisplay=OledDisplayMode.TXT,
+                    flip=True,
+            )
+            
+            self.extensions.append(oled_ext)            
+
     col_pins = (pins[17], pins[16], pins[15], pins[14], pins[13], pins[12],)
     row_pins = (pins[7], pins[8], pins[9], pins[10],)
     diode_orientation = DiodeOrientation.COL2ROW

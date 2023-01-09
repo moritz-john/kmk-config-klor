@@ -6,12 +6,14 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 try:
-    from klor_config import klor_variant, klor_rgb, klor_oled, klor_speaker
+    from klor_config import klor_variant, klor_rgb, klor_speaker
 except ImportError:
     pass
 
+### CHANGE CONFIG HERE
+klor_oled = False                # True
 
-keyboard = KMKKeyboard()
+keyboard = KMKKeyboard(klor_oled)
 
 keyboard.modules.append(Layers())
 keyboard.extensions.append(MediaKeys())
@@ -65,18 +67,6 @@ elif klor_rgb == 'peg_rgb' and not klor_variant == 'undefined':
 
 elif klor_rgb == 'basic_rgb' or 'peg_rgb' and klor_variant == 'undefined':
     print:("Make sure the define your KLOR variant in the 'klor_variant' variable.")
-
-
-
-
-# OLED:
-if klor_oled == False:
-    pass
-elif klor_oled == True:
-    from klor_oled import oled_code
-    oled_code(keyboard)
-else:
-    print("Make sure to set the variable 'klor_oled' correctly.")
 
 
 # SPEAKER:
