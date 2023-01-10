@@ -114,6 +114,44 @@ class KMKKeyboard(_KMKKeyboard):
         self.setup_speaker(klor_speaker)
         self.setup_rgb(klor_rgb, klor_variant)
 
+    def setup_oled(self, klor_oled):
+        if klor_oled:
+            from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
+
+            oled_ext = Oled(
+                OledData(
+                    corner_one={0:OledReactionType.STATIC,1:["Layer"]},
+                    corner_two={0:OledReactionType.LAYER,1:["0","1",]},
+                    corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
+                    corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
+                    ),
+                    toDisplay=OledDisplayMode.TXT,
+                    flip=True,
+            )
+
+            self.extensions.append(oled_ext) 
+
+    def setup_speaker(self, klor_speaker):
+        if klor_speaker:
+            import digitalio
+            import pwmio
+            import time
+            from storage import getmount
+
+            drive_name = str(getmount('/').label)
+
+            # Play a startup beep on the left keyboard side:
+            if drive_name.endswith('L'):
+                buzzer = pwmio.PWMOut(self.buzzer_pin, variable_frequency=True)
+                OFF = 0
+                ON = 2**15
+                buzzer.duty_cycle = ON
+                buzzer.frequency = 2000
+                time.sleep(0.2)
+                buzzer.frequency = 1000
+                time.sleep(0.2)
+                buzzer.duty_cycle = OFF
+
     def setup_rgb(self, klor_rgb, klor_variant):
         if klor_rgb == 'peg_rgb':
             self.brightness_limit = 0.3
@@ -138,18 +176,6 @@ class KMKKeyboard(_KMKKeyboard):
                 self.num_pixels = len(led_pos_saegewerk)
                 peg_rgb(self, led_display_saegewerk)  
 
-            # if klor_variant == 'polydactyl':
-            #     peg_rgb(self, led_display_polydactyl)
-            
-            # if klor_variant == 'konrad':
-            #     peg_rgb(self, led_display_konrad)
-            
-            # if klor_variant == 'yubitsume':
-            #     peg_rgb(self, led_display_yubitsume)
-            
-            # if klor_variant == 'saegewerk':
-            #     peg_rgb(self, led_display_saegewerk)
-
         if klor_rgb == 'basic_rgb':
             
             if klor_variant == 'polydactyl':
@@ -163,44 +189,6 @@ class KMKKeyboard(_KMKKeyboard):
             
             if klor_variant == 'saegewerk':
                 basic_rgb(self, pixels=18)        
-
-    def setup_oled(self, klor_oled):
-        if klor_oled:
-            from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
-
-            oled_ext = Oled(
-                OledData(
-                    corner_one={0:OledReactionType.STATIC,1:["Layer"]},
-                    corner_two={0:OledReactionType.LAYER,1:["0","1",]},
-                    corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},
-                    corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}
-                    ),
-                    toDisplay=OledDisplayMode.TXT,
-                    flip=True,
-            )
-
-            self.extensions.append(oled_ext)            
-
-    def setup_speaker(self, klor_speaker):
-        if klor_speaker:
-            import digitalio
-            import pwmio
-            import time
-            from storage import getmount
-
-            drive_name = str(getmount('/').label)
-
-            # Play a startup beep on the left keyboard side:
-            if drive_name.endswith('L'):
-                buzzer = pwmio.PWMOut(self.buzzer_pin, variable_frequency=True)
-                OFF = 0
-                ON = 2**15
-                buzzer.duty_cycle = ON
-                buzzer.frequency = 2000
-                time.sleep(0.2)
-                buzzer.frequency = 1000
-                time.sleep(0.2)
-                buzzer.duty_cycle = OFF
 
     col_pins = (pins[17], pins[16], pins[15], pins[14], pins[13], pins[12],)
     row_pins = (pins[7], pins[8], pins[9], pins[10],)
