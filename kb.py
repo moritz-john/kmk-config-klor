@@ -68,25 +68,25 @@ led_display_saegewerk =[
                                                       [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255], [85, 0, 255], [85, 0, 255],
         ]
 
-def basic_rgb(keyboard, pixels):
-    from kmk.extensions.RGB import RGB
+# def basic_rgb(keyboard, pixels):
+#     from kmk.extensions.RGB import RGB
 
-    rgb = RGB(pixel_pin=keyboard.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
+#     rgb = RGB(pixel_pin=keyboard.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
 
-    keyboard.extensions.append(rgb)
+#     keyboard.extensions.append(rgb)
 
 
-def peg_rgb(keyboard, led_display):
-    from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
+# def peg_rgb(keyboard, led_display):
+#     from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
 
-    rgb_ext = Rgb_matrix(
-        ledDisplay=led_display,
-        split=True,
-        rightSide=False,
-        disable_auto_write=True,
-    )
+#     rgb_ext = Rgb_matrix(
+#         ledDisplay=led_display,
+#         split=True,
+#         rightSide=False,
+#         disable_auto_write=True,
+#     )
 
-    keyboard.extensions.append(rgb_ext)
+#     keyboard.extensions.append(rgb_ext)
 
 
 class KMKKeyboard(_KMKKeyboard):
@@ -115,7 +115,7 @@ class KMKKeyboard(_KMKKeyboard):
         self.setup_rgb(klor_rgb, klor_variant)
 
     def setup_oled(self, klor_oled):
-        if klor_oled:
+        if klor_oled == True:
             from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
 
             oled_ext = Oled(
@@ -129,10 +129,11 @@ class KMKKeyboard(_KMKKeyboard):
                     flip=True,
             )
 
-            self.extensions.append(oled_ext) 
+            self.extensions.append(oled_ext)
+
 
     def setup_speaker(self, klor_speaker):
-        if klor_speaker:
+        if klor_speaker == True:
             import digitalio
             import pwmio
             import time
@@ -152,6 +153,26 @@ class KMKKeyboard(_KMKKeyboard):
                 time.sleep(0.2)
                 buzzer.duty_cycle = OFF
 
+    def basic_rgb(self, pixels):
+        from kmk.extensions.RGB import RGB
+
+        rgb = RGB(pixel_pin=self.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
+
+        self.extensions.append(rgb)
+
+
+    def peg_rgb(self, led_display):
+        from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
+
+        rgb_ext = Rgb_matrix(
+            ledDisplay=led_display,
+            split=True,
+            rightSide=False,
+            disable_auto_write=True,
+        )
+
+        self.extensions.append(rgb_ext)
+
     def setup_rgb(self, klor_rgb, klor_variant):
         if klor_rgb == 'peg_rgb':
             self.brightness_limit = 0.3
@@ -159,36 +180,36 @@ class KMKKeyboard(_KMKKeyboard):
             if klor_variant == 'polydactyl':
                 self.led_key_pos = led_pos_polydactyl
                 self.num_pixels = len(led_pos_polydactyl)
-                peg_rgb(self, led_display_polydactyl)
-            
+                self.peg_rgb(led_display_polydactyl)
+
             if klor_variant == 'konrad':
                 self.led_key_pos = led_pos_konrad
                 self.num_pixels = len(led_pos_konrad)
-                peg_rgb(self, led_display_konrad)
+                self.peg_rgb(led_display_konrad)
 
             if klor_variant == 'yubitsume':
                 self.led_key_pos = led_pos_yubitsume
                 self.num_pixels = len(led_pos_yubitsume)
-                peg_rgb(self, led_display_yubitsume)
-            
+                self.peg_rgb(led_display_yubitsume)
+
             if klor_variant == 'saegewerk':
                 self.led_key_pos = led_pos_saegewerk
                 self.num_pixels = len(led_pos_saegewerk)
-                peg_rgb(self, led_display_saegewerk)  
+                self.peg_rgb(led_display_saegewerk)
 
         if klor_rgb == 'basic_rgb':
-            
+
             if klor_variant == 'polydactyl':
-                basic_rgb(self, pixels=21)
-            
+                self.basic_rgb(pixels=21)
+
             if klor_variant == 'konrad':
-                basic_rgb(self, pixels=20)
-            
+                self.basic_rgb(pixels=20)
+
             if klor_variant == 'yubitsume':
-                basic_rgb(self, pixels=19)
-            
+                self.basic_rgb(pixels=19)
+
             if klor_variant == 'saegewerk':
-                basic_rgb(self, pixels=18)        
+                self.basic_rgb(pixels=18)
 
     col_pins = (pins[17], pins[16], pins[15], pins[14], pins[13], pins[12],)
     row_pins = (pins[7], pins[8], pins[9], pins[10],)
@@ -202,16 +223,13 @@ class KMKKeyboard(_KMKKeyboard):
     buzzer_pin = pins[11]
     rgb_pixel_pin = pins[0]
 
+
     # NOQA
     # flake8: noqa
     coord_mapping = [
             1,  2,  3,  4,  5,         31, 30, 29, 28, 27,
         6,  7,  8,  9, 10, 11,         37, 36, 35, 34, 33, 32,
        12, 13, 14, 15, 16, 17, 23, 49, 43, 42, 41, 40, 39, 38,
-               19, 20, 21, 22,         48, 47, 46, 45,                
+               19, 20, 21, 22,         48, 47, 46, 45,
                        24, 25,         51, 50,
     ]
-
-
-
-
