@@ -7,7 +7,7 @@ from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
 ####
-# LED POSITION
+# LED positions used for PEG RGB (per key RGB)
 # do not change!
 led_pos_polydactyl = [
         18, 13, 12,  6,  5,                  26, 27, 33, 34, 39,
@@ -37,7 +37,8 @@ led_pos_saegewerk = [
                      8,  1, 0,           18, 19, 26,
 ]
 
-#change color here
+# LED colors for PEG (per key RGB)
+# change color here for your specifig KLOR variant
 
 led_display_polydactyl = [
                           [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
@@ -120,30 +121,34 @@ class KMKKeyboard(_KMKKeyboard):
             if klor_variant == 'polydactyl':
                 self.led_key_pos = led_pos_polydactyl
                 self.num_pixels = len(led_pos_polydactyl)
+                peg_rgb(self, led_display_polydactyl)
             
             if klor_variant == 'konrad':
                 self.led_key_pos = led_pos_konrad
                 self.num_pixels = len(led_pos_konrad)
-            
+                peg_rgb(self, led_display_konrad)
+
             if klor_variant == 'yubitsume':
                 self.led_key_pos = led_pos_yubitsume
                 self.num_pixels = len(led_pos_yubitsume)
-            
-            if klor_variant == 'saegewerk':
-                self.led_key_pos = led_pos_saegewerk
-                self.num_pixels = len(led_pos_saegewerk)   
-
-            if klor_variant == 'polydactyl':
-                peg_rgb(self, led_display_polydactyl)
-            
-            if klor_variant == 'konrad':
-                peg_rgb(self, led_display_konrad)
-            
-            if klor_variant == 'yubitsume':
                 peg_rgb(self, led_display_yubitsume)
             
             if klor_variant == 'saegewerk':
-                peg_rgb(self, led_display_saegewerk)
+                self.led_key_pos = led_pos_saegewerk
+                self.num_pixels = len(led_pos_saegewerk)
+                peg_rgb(self, led_display_saegewerk)  
+
+            # if klor_variant == 'polydactyl':
+            #     peg_rgb(self, led_display_polydactyl)
+            
+            # if klor_variant == 'konrad':
+            #     peg_rgb(self, led_display_konrad)
+            
+            # if klor_variant == 'yubitsume':
+            #     peg_rgb(self, led_display_yubitsume)
+            
+            # if klor_variant == 'saegewerk':
+            #     peg_rgb(self, led_display_saegewerk)
 
         if klor_rgb == 'basic_rgb':
             
