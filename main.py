@@ -5,17 +5,17 @@ from kmk.keys import KC
 from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
-try:
-    from klor_config import klor_variant, klor_rgb, klor_oled, klor_speaker
-except ImportError:
-    pass
 
+### CHANGE CONFIG HERE
+klor_variant = 'saegewerk' # 'polydactyl', 'konrad', 'yubitsume', 'saegewerk'
+klor_rgb     = 'peg_rgb'   # 'basic_rgb', 'peg_rgb' - If you are unsure pick 'basic_rgb': it's currently easier to use and you can do more at run time.
+klor_oled    = False       # True
+klor_speaker = False       # False
 
-keyboard = KMKKeyboard()
+keyboard = KMKKeyboard(klor_rgb, klor_variant, klor_oled, klor_speaker)
 
 keyboard.modules.append(Layers())
 keyboard.extensions.append(MediaKeys())
-
 
 # Enable debugging: http://kmkfw.io/docs/debugging/
 # keyboard.debug_enabled = True
@@ -32,67 +32,6 @@ split = Split(
 )
 keyboard.modules.append(split)
 # Split code ends here ---
-
-
-# RGB:
-if klor_rgb == 'none':
-    pass
-# basic rgb
-elif klor_rgb == 'basic_rgb' and not klor_variant == 'undefined':
-    from klor_basic_rgb import basic_rgb
-    if klor_variant == 'polydactyl':
-        basic_rgb(keyboard, pixels=21)
-    elif klor_variant == 'konrad':
-        basic_rgb(keyboard, pixels=20)
-    elif klor_variant == 'yubitsume':
-        basic_rgb(keyboard, pixels=19)
-    elif klor_variant == 'saegewerk':
-        basic_rgb(keyboard, pixels=18)
-# peg rgb
-elif klor_rgb == 'peg_rgb' and not klor_variant == 'undefined':
-    if klor_variant == 'polydactyl':
-        from klor_peg_rgb import peg_rgb_polydactyl
-        peg_rgb_polydactyl(keyboard)
-    elif klor_variant == 'konrad':
-        from klor_peg_rgb import peg_rgb_konrad
-        peg_rgb_konrad(keyboard)
-    elif klor_variant == 'yubitsume':
-        from klor_peg_rgb import peg_rgb_yubitsume
-        peg_rgb_yubitsume(keyboard)
-    elif klor_variant == 'saegewerk':
-        from klor_peg_rgb import peg_rgb_saegewerk
-        peg_rgb_saegewerk(keyboard)
-
-elif klor_rgb == 'basic_rgb' or 'peg_rgb' and klor_variant == 'undefined':
-    print:("Make sure the define your KLOR variant in the 'klor_variant' variable.")
-
-
-
-
-# OLED:
-if klor_oled == False:
-    pass
-elif klor_oled == True:
-    from klor_oled import oled_code
-    oled_code(keyboard)
-else:
-    print("Make sure to set the variable 'klor_oled' correctly.")
-
-
-# SPEAKER:
-if klor_speaker == False:
-    pass
-elif klor_speaker == True:
-    from klor_speaker import speaker_code
-    speaker_code(keyboard)
-else:
-    print("Make sure to set the variable 'klor_speaker' correctly.")
-
-
-
-
-
-
 
 # Key aliases
 xxxxxxx = KC.NO
