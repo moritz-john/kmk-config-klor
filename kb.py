@@ -37,12 +37,56 @@ led_pos_saegewerk = [
                      8,  1, 0,           18, 19, 26,
 ]
 
+#change color here
+
+led_display_polydactyl = [
+                          [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                                    [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255],   [85, 0, 255], [85, 0, 255], [85, 0, 255],
+        ]
+
+led_display_konrad =[
+                          [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                                    [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255], [85, 0, 255], [85, 0, 255],
+        ]
+
+led_display_yubitsume =[
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                      [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255],   [85, 0, 255], [85, 0, 255], [85, 0, 255],
+        ]
+
+led_display_saegewerkt =[
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                      [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255], [85, 0, 255], [85, 0, 255],
+        ]
+
 def basic_rgb(keyboard, pixels):
     from kmk.extensions.RGB import RGB
 
     rgb = RGB(pixel_pin=keyboard.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
 
     keyboard.extensions.append(rgb)
+
+
+def peg_rgb(keyboard, led_display):
+    from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
+
+    rgb_ext = Rgb_matrix(
+        ledDisplay=led_display,
+        split=True,
+        rightSide=False,
+        disable_auto_write=True,
+    )
+
+    keyboard.extensions.append(rgb_ext)
+
 
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
@@ -71,9 +115,7 @@ class KMKKeyboard(_KMKKeyboard):
 
     def setup_rgb(self, klor_rgb, klor_variant):
         if klor_rgb == 'peg_rgb':
-            from klor_peg_rgb import klor_brightness_limit
-
-            self.brightness_limit = klor_brightness_limit
+            self.brightness_limit = 0.3
 
             if klor_variant == 'polydactyl':
                 self.led_key_pos = led_pos_polydactyl
@@ -90,6 +132,18 @@ class KMKKeyboard(_KMKKeyboard):
             if klor_variant == 'saegewerk':
                 self.led_key_pos = led_pos_saegewerk
                 self.num_pixels = len(led_pos_saegewerk)   
+
+            if klor_variant == 'polydactyl':
+                peg_rgb(self, led_display_polydactyl)
+            
+            if klor_variant == 'konrad':
+                peg_rgb(self, led_display_konrad)
+            
+            if klor_variant == 'yubitsume':
+                peg_rgb(self, led_display_yubitsume)
+            
+            if klor_variant == 'saegewerk':
+                peg_rgb(self, led_display_saegewerk)
 
         if klor_rgb == 'basic_rgb':
             from klor_basic_rgb import basic_rgb
