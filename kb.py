@@ -88,7 +88,6 @@ led_display_saegewerk =[
 
 #     keyboard.extensions.append(rgb_ext)
 
-
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
         # create and register the scanner(s)
@@ -198,7 +197,6 @@ class KMKKeyboard(_KMKKeyboard):
                 self.peg_rgb(led_display_saegewerk)
 
         if klor_rgb == 'basic_rgb':
-
             if klor_variant == 'polydactyl':
                 self.basic_rgb(pixels=21)
 
@@ -222,7 +220,6 @@ class KMKKeyboard(_KMKKeyboard):
     tx = pins[1]
     buzzer_pin = pins[11]
     rgb_pixel_pin = pins[0]
-
 
     # NOQA
     # flake8: noqa
