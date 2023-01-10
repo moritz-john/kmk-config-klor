@@ -37,6 +37,13 @@ led_pos_saegewerk = [
                      8,  1, 0,           18, 19, 26,
 ]
 
+def basic_rgb(keyboard, pixels):
+    from kmk.extensions.RGB import RGB
+
+    rgb = RGB(pixel_pin=keyboard.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=100,)
+
+    keyboard.extensions.append(rgb)
+
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
         # create and register the scanner(s)
@@ -60,7 +67,9 @@ class KMKKeyboard(_KMKKeyboard):
 
         self.setup_oled(klor_oled)
         self.setup_speaker(klor_speaker)
+        self.setup_rgb(klor_rgb, klor_variant)
 
+    def setup_rgb(self, klor_rgb, klor_variant):
         if klor_rgb == 'peg_rgb':
             from klor_peg_rgb import klor_brightness_limit
 
@@ -80,7 +89,22 @@ class KMKKeyboard(_KMKKeyboard):
             
             if klor_variant == 'saegewerk':
                 self.led_key_pos = led_pos_saegewerk
-                self.num_pixels = len(led_pos_saegewerk)        
+                self.num_pixels = len(led_pos_saegewerk)   
+
+        if klor_rgb == 'basic_rgb':
+            from klor_basic_rgb import basic_rgb
+
+            if klor_variant == 'polydactyl':
+                basic_rgb(self, pixels=21)
+            
+            if klor_variant == 'konrad':
+                basic_rgb(self, pixels=20)
+            
+            if klor_variant == 'yubitsume':
+                basic_rgb(self, pixels=19)
+            
+            if klor_variant == 'saegewerk':
+                basic_rgb(self, pixels=18)        
 
     def setup_oled(self, klor_oled):
         if klor_oled:

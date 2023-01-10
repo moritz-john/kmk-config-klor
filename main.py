@@ -33,22 +33,6 @@ split = Split(
 keyboard.modules.append(split)
 # Split code ends here ---
 
-# basic rgb
-if klor_rgb == 'basic_rgb':
-    from klor_basic_rgb import basic_rgb
-
-    if klor_variant == 'polydactyl':
-        basic_rgb(keyboard, pixels=21)
-    
-    if klor_variant == 'konrad':
-        basic_rgb(keyboard, pixels=20)
-    
-    if klor_variant == 'yubitsume':
-        basic_rgb(keyboard, pixels=19)
-    
-    if klor_variant == 'saegewerk':
-        basic_rgb(keyboard, pixels=18)
-
 # peg rgb
 if klor_rgb == 'peg_rgb':
     if klor_variant == 'polydactyl':
