@@ -11,15 +11,31 @@ from kmk.scanners.encoder import RotaryioEncoder
 # change the RGB [R, G, B] value for each key you want.
  
 
-rgb = [
-                                (18, [85, 0, 255]), (13, [85, 0, 255]), (12, [85, 0, 255]), (6, [85, 0, 255]), (5, [85, 0, 255]),                                                                       (26, [85, 0, 255]), (27, [85, 0, 255]), (33, [85, 0, 255]), (34, [85, 0, 255]), (39, [85, 0, 255]), 
+# pos_rgb = [
+#                                 (18, [85, 0, 255]), (13, [85, 0, 255]), (12, [85, 0, 255]), (6, [85, 0, 255]), (5, [85, 0, 255]),                                                                       (26, [85, 0, 255]), (27, [85, 0, 255]), (33, [85, 0, 255]), (34, [85, 0, 255]), (39, [85, 0, 255]), 
                                
-            (19, [85, 0, 255]), (17, [85, 0, 255]), (14, [85, 0, 255]), (11, [85, 0, 255]), (7, [85, 0, 255]), (4, [85, 0, 255]),                                                                       (25, [85, 0, 255]), (28, [85, 0, 255]), (32, [85, 0, 255]), (35, [85, 0, 255]), (38, [85, 0, 255]), (40, [85, 0, 255]),
+#             (19, [85, 0, 255]), (17, [85, 0, 255]), (14, [85, 0, 255]), (11, [85, 0, 255]), (7, [85, 0, 255]), (4, [85, 0, 255]),                                                                       (25, [85, 0, 255]), (28, [85, 0, 255]), (32, [85, 0, 255]), (35, [85, 0, 255]), (38, [85, 0, 255]), (40, [85, 0, 255]),
                                       
-            (20, [85, 0, 255]), (16, [85, 0, 255]), (15, [85, 0, 255]), (10, [85, 0, 255]), (8, [85, 0, 255]), (3, [85, 0, 255]),                                                                       (24, [85, 0, 255]), (29, [85, 0, 255]), (31, [85, 0, 255]), (36, [85, 0, 255]), (37, [85, 0, 255]), (41, [85, 0, 255]),
+#             (20, [85, 0, 255]), (16, [85, 0, 255]), (15, [85, 0, 255]), (10, [85, 0, 255]), (8, [85, 0, 255]), (3, [85, 0, 255]),                                                                       (24, [85, 0, 255]), (29, [85, 0, 255]), (31, [85, 0, 255]), (36, [85, 0, 255]), (37, [85, 0, 255]), (41, [85, 0, 255]),
                                
-                                                                                             (9, [255, 0, 0]), (2, [85, 100, 0]), (1, [85, 0, 250]), (0, [85, 0, 200]),             (21, [85, 0, 200]), (22, [85, 0, 255]), (23, [85, 100, 0]), (30, [255, 0, 0])     
+#                                                                                              (9, [255, 0, 0]), (2, [85, 100, 0]), (1, [85, 0, 250]), (0, [85, 0, 200]),             (21, [85, 0, 200]), (22, [85, 0, 255]), (23, [85, 100, 0]), (30, [255, 0, 0])     
+# ]
+
+led_positions = [
+        18, 13, 12,  6,  5,                  26, 27, 33, 34, 39,
+    19, 17, 14, 11,  7,  4,                  25, 28, 32, 35, 38, 40,
+    20, 16, 15, 10,  8,  3,                  24, 29, 31, 36, 37, 41,
+                     9,  2, 1, 0,    21, 22, 23, 30,
 ]
+
+rgb_data = [
+                  [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+    [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+    [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                                                              [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                            [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],    [85, 0, 255],   [85, 0, 255], [85, 0, 255], [85, 0, 255],
+]
+
+pos_rgb = [(x, y) for x, y in zip(led_positions, rgb_data)]
 
 # the possible cuts for the broken of keys of the different KLOR variants.
 cuts = {
@@ -29,14 +45,14 @@ cuts = {
     "saegewerk": [0, 19, 20, 21, 40, 41]
 }
 
-# trim down [R, G, B] contained in the rgb tupple to fit a specifig KLOR variant 
-def trim_display(rgb, cut):
-    return ([d for (p, d) in rgb if p not in cut])
+# trim down [R, G, B] contained in the pos_rgb tupple to fit a specifig KLOR variant 
+def trim_display(pos_rgb, cut):
+    return ([d for (p, d) in pos_rgb if p not in cut])
 
-# trim down the position part of the rgb tupple to fit the specifig KLOR variant
+# trim down the position part of the pos_rgb tupple to fit the specifig KLOR variant
 #  
-def trim_pos(rgb, cut):
-    cut_pos = [p for (p, d) in rgb if p not in cut]
+def trim_pos(pos_rgb, cut):
+    cut_pos = [p for (p, d) in pos_rgb if p not in cut]
     old_to_new = {old: new for new, old in enumerate(sorted(cut_pos))}
     return [old_to_new[p] for p in cut_pos]
 
@@ -79,7 +95,6 @@ class KMKKeyboard(_KMKKeyboard):
                     toDisplay=OledDisplayMode.TXT,
                     flip=True,
             )
-
             self.extensions.append(oled_ext)
 
 
@@ -127,15 +142,15 @@ class KMKKeyboard(_KMKKeyboard):
         if klor_rgb == 'peg_rgb':
 
             self.brightness_limit = 0.3
-            pos = trim_pos(rgb, cuts[klor_variant])
-            display = trim_display(rgb, cuts[klor_variant])
+            pos = trim_pos(pos_rgb, cuts[klor_variant])
+            display = trim_display(pos_rgb, cuts[klor_variant])
             self.led_key_pos = pos
             self.num_pixels = len(pos)
             self.peg_rgb(display)
 
         if klor_rgb == 'basic_rgb':
 
-            pos = trim_pos(rgb, cuts[klor_variant])
+            pos = trim_pos(pos_rgb, cuts[klor_variant])
             half_pos = len(pos)/2
             self.basic_rgb(pixels=int(half_pos))
 
