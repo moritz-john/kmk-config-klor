@@ -22,7 +22,7 @@ Afterwards you have to change the variable `klor_oled` from `False` to `True` in
 ```python
 klor_variant = 'saegewerk'
 klor_rgb     = 'none'
-klor_oled    = False       <- Change this to True
+klor_oled    = False       #<- Change this to True
 klor_speaker = False
 ```
 

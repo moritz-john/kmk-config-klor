@@ -1,8 +1,8 @@
 ## RGB
 
 >tl;dr: add library to your keyboard, set `klor_rgb = 'basic_rgb' OR 'peg_rgb'`, customize your RGB code and add rgb keycodes to your keymap to control your lighting.
-## 1) Add the necessary libraries: 
-In order to use RGB you have to install one libraries into your keyboards `lib` folder:
+## 1) Add the necessary library: 
+In order to use RGB you have to install one library into your keyboards `lib` folder:
 
 You can find the necessary libraries included in the `klor_kmk_firmware.zip` release.\
 **or**\
@@ -18,12 +18,12 @@ You can download them yourself from here: [adafruit-circuitpython-bundle-7.x-mpy
 
 ## 2) Chose your RGB mode:
 
-Afterwards you have to change the variable `klor_rgb` from `none` to either `basic_rgb` **or** `peg_rgb` in your `main.py` file:
+Afterwards you have to change the variable `klor_rgb` from `none` to either `basic_rgb` **or** `peg_rgb` in your `main.py` file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
 
 
 ```python
-klor_variant = 'saegewerk'
-klor_rgb     = 'none'      <- Change this to `basic_rgb` OR `peg_rgb`
+klor_variant = 'saegewerk' #<- Change this to your own KLOR variant: 'polydactyl', 'konrad', 'yubitsume', 'saegewerk'
+klor_rgb     = 'none'      #<- Change this to `basic_rgb` OR `peg_rgb`
 klor_oled    = False
 klor_speaker = False
 ```
@@ -58,7 +58,10 @@ rgb_data = [
 ```
 Each `[R, G, B]` square bracket matches a KLOR key as seen in `led_positions` in `line 11`.\
 Keep in mind that some KLOR variants have less columnar staggered / thumb keys.\
-Just change `[R, G, B]` with a value between `[0-255, 0-255, 0-255]`.
+Adjust `[R, G, B]` with a value between `[0-255, 0-255, 0-255]`.
+
+> **Warning**
+> Use RGB Codes e.g.: `[255,55,55]` and **NOT** Color Classes e.g.: `Color.RED`
 
  ## 5) Add RGB keycodes to your keymap:
 
