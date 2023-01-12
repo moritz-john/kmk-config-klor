@@ -17,7 +17,7 @@ You can download them yourself from here: [adafruit-circuitpython-bundle-7.x-mpy
 </p>
 
 ## 2) Activate the OLED code:
-Afterwards you have to change the variable `klor_oled` from `False` to `True` in your `main.py` file:
+Afterwards you have to change the variable `klor_oled` from `False` to `True` in your [`main.py`](../main.py) file:
 
 ```python
 klor_variant = 'saegewerk'
@@ -29,7 +29,7 @@ klor_speaker = False
 ## 3) Customize your OLED text:
 When you add more layers to your keymap - also add them to this part your OLED code e.g.:
 
-*You can find the code in your `kb.py` file starting on `line 76`*
+*You can find the code in your [`kb.py`](../kb.py) file starting on `line 76`*
 ```python
 corner_one={0:OledReactionType.STATIC,1:["Layer"]},
 corner_two={0:OledReactionType.LAYER,1:["0","1","2",]},

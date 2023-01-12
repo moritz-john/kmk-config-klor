@@ -18,7 +18,7 @@ You can download them yourself from here: [adafruit-circuitpython-bundle-7.x-mpy
 
 ## 2) Chose your RGB mode:
 
-Afterwards you have to change the variable `klor_rgb` from `'none'` to either `'basic_rgb'` **or** `'peg_rgb'` in your `main.py` file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
+Afterwards you have to change the variable `klor_rgb` from `'none'` to either `'basic_rgb'` **or** `'peg_rgb'` in your [`main.py`](../main.py) file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
 
 
 ```python
@@ -34,7 +34,7 @@ If you need to address LEDs individually (so change specific LEDs to a different
 
 ## 4.1) Customize "Basic" RGB:
 
-*You can find the code in your `kb.py` file starting on `line 113`*
+*You can find the code in your [`kb.py`](../kb.py) file starting on `line 113`*
 
 ```python
 rgb = RGB(pixel_pin=self.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=20,)
@@ -45,7 +45,7 @@ Read more about this here: http://kmkfw.io/docs/rgb/#configuration
 
 ## 4.2) Customize PEG RGB:
 
-*You can find the code in your `kb.py` file starting on `line 19`*
+*You can find the code in your [`kb.py`](../kb.py) file starting on `line 19`*
 
 ```python
 rgb_data = [
