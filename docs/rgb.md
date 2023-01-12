@@ -54,7 +54,7 @@ rgb_data = [
     [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],                            
                                                             [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
 ]
-(only showing half of 'rgb_data' for reasons of space)
+#(only showing half of 'rgb_data' for reasons of space)
 ```
 Each `[R, G, B]` square bracket matches a KLOR key as seen in `led_positions` in `line 11`.\
 Keep in mind that some KLOR variants have less columnar staggered / thumb keys.\
