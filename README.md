@@ -11,7 +11,7 @@ Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
 `main.py` & `kb.py` only represents a basic framework.\
 Adjust the keymap to your liking and enable RGB & OLED support if needed.
 ### Installation:
-[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py` & `main.py`
+[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py` & `main.py` (+ `lib` if you plan to use OLEDs or RGB)
 
 
 ### Microcontroller support:
@@ -47,4 +47,4 @@ ___
 
 ### Prior art / thanks to:
 
-The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware & regicidal plutophage.
+The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware, regicidal plutophage, @janjan and @manna-harbour.

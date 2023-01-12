@@ -125,11 +125,11 @@ class KMKKeyboard(_KMKKeyboard):
         )
         self.extensions.append(rgb_ext)
 
-    # Calculate the RGB data for a specifig KLOR variant:
+    # "Calculate" the RGB data for a specifig KLOR variant:
     def trim_display(self, pos_rgb, cut):
         return ([d for (p, d) in pos_rgb if p not in cut])
 
-    # Calculate the position data for a specifig KLOR variant
+    # "Calculate" the position data for a specifig KLOR variant
     def trim_pos(self, pos_rgb, cut):
         cut_pos = [p for (p, d) in pos_rgb if p not in cut]
         old_to_new = {old: new for new, old in enumerate(sorted(cut_pos))}
