@@ -6,12 +6,12 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 
-### CHANGE CONFIG HERE ↓↓↓
+# ↓↓↓ CHANGE CONFIG HERE ↓↓↓
 klor_variant = 'saegewerk'      # 'polydactyl', 'konrad', 'yubitsume', 'saegewerk'
 klor_rgb     = 'none'           # 'basic_rgb', 'peg_rgb' - If you are unsure pick 'basic_rgb': it's currently easier to use and you can do more at runtime.
 klor_oled    = False            # True
 klor_speaker = False            # False
-### CHANGE CONFIG HERE ↑↑↑
+# ↑↑↑ CHANGE CONFIG HERE ↑↑↑
 
 keyboard = KMKKeyboard(klor_rgb, klor_variant, klor_oled, klor_speaker)
 
