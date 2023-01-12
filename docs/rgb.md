@@ -1,4 +1,4 @@
-## RGB
+# RGB
 
 >tl;dr: add library to your keyboard, set `klor_rgb = 'basic_rgb' OR 'peg_rgb'`, customize your RGB code and add rgb keycodes to your keymap to control your lighting.
 ## 1) Add the necessary library: 
