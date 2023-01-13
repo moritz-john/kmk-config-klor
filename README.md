@@ -47,4 +47,4 @@ ___
 
 ### Prior art / thanks to:
 
-The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware, regicidal plutophage, @janjan and @manna-harbour.
+The people behind the [Lunakey Pico](https://github.com/KMKfw/kmk_firmware/blob/master/boards/lunakey_pico/README.md), [Lulu](https://github.com/KMKfw/kmk_firmware/tree/master/boards/boardsource/Lulu), [w3by2](https://github.com/wlard/keyboards/tree/main/w3by2%20-%20pico) and [Sofle V2](https://github.com/KMKfw/kmk_firmware/tree/master/boards/sofle/sofleV2) KMK firmware, regicidal plutophage, @janjan and [@manna-harbour](https://github.com/manna-harbour).
