@@ -24,7 +24,7 @@ Rename your microcontrollers / USB drives to "KLORL" (for the left keyboard side
 - take the [`utilities/rename_klor_left/boot.py`](/utilities/rename_klor_left/boot.py) file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
 - take the [`utilities/rename_klor_right/boot.py`](/utilities/rename_klor_right/boot.py) file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
 
-After a reboot the microcontroller should now appear as "KLORL" and "KLORR" respectively.
+After a reboot the microcontroller should appear as "KLORL" and "KLORR" respectively.
 
 #### 3) Install KMK 
 1) Get [a copy](https://github.com/KMKfw/kmk_firmware/archive/refs/heads/master.zip) of KMK from the master branch 

@@ -36,7 +36,8 @@ ___
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
 - [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *disabled by default*
-- [RGB](http://kmkfw.io/docs/rgb) *disabled by default*
+- [RGB/Underglow/NeoPixel](http://kmkfw.io/docs/rgb) *disabled by default*
+- [Peg RGB Matrix](http://kmkfw.io/docs/peg_rgb_matrix/) *disabled by default*
 - [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
 - Buzzer / Speaker (via custom code)
 
