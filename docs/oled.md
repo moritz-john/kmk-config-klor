@@ -31,9 +31,9 @@ When you add more layers to your keymap - also add them to this part your OLED c
 
 *You can find the code in your [`kb.py`](../kb.py) file starting on `line 76`*
 ```python
-corner_one={0:OledReactionType.STATIC,1:["Layer"]},
-corner_two={0:OledReactionType.LAYER,1:["0","1","2",]},
-corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE","TESTLAYER",]},
-corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","tested",]}
+corner_one={0:OledReactionType.STATIC,1:["Layer"]},                
+corner_two={0:OledReactionType.LAYER,1:["0","1","2","3"]},             
+corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE","LOWER","TEST"]},
+corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","sym","testing"]}   
 ```
 

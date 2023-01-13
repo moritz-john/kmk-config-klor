@@ -30,7 +30,8 @@ After a reboot the microcontroller should appear as "KLORL" and "KLORR" respecti
 1) Get [a copy](https://github.com/KMKfw/kmk_firmware/archive/refs/heads/master.zip) of KMK from the master branch 
 2) Unzip the file and copy the `kmk` folder and the `boot.py` file at the root of the USB drive (override the `boot.py` file used in step 2)
 3) Download the `kb.py` & `main.py` files from this repository and also copy them onto your USB drive
-4) Reboot
+4) Additionally place the necessary libraries for [OLED](oled.md) or [RGB](rgb.md) into your `lib` folder
+5) Reboot
 
 Repeat those steps for both the left and right microcontroller.
 

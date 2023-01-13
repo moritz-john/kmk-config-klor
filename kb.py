@@ -79,10 +79,10 @@ class KMKKeyboard(_KMKKeyboard):
 
             oled_ext = Oled(
                 OledData(
-                    corner_one={0:OledReactionType.STATIC,1:["Layer"]},             # | Adjust these lines   
-                    corner_two={0:OledReactionType.LAYER,1:["0","1",]},             # | when you add more
-                    corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE",]},    # | layers to your keyboard.keymap
-                    corner_four={0:OledReactionType.LAYER,1:["qwerty","nums",]}     # | in main.py
+                    corner_one={0:OledReactionType.STATIC,1:["Layer"]},                     # | Adjust these lines   
+                    corner_two={0:OledReactionType.LAYER,1:["0","1","2"]},                  # | when you add more
+                    corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE","LOWER"]},     # | layers to your keyboard.keymap
+                    corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","sym"]}        # | in main.py
                     ),
                     toDisplay=OledDisplayMode.TXT,
                     flip=True,

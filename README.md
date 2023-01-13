@@ -11,8 +11,7 @@ Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
 `main.py` & `kb.py` only represents a basic framework.\
 Adjust the keymap to your liking and enable RGB & OLED support if needed.
 ### Installation:
-[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py` & `main.py` (+ `lib` if you plan to use OLEDs or RGB)
-
+[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py`, `main.py` & `lib` folder (if you plan to use OLEDs or RGB)
 
 ### Microcontroller support:
 `kb.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `kb.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
@@ -22,10 +21,10 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ```
 
 ### OLED support:
-[Additional steps in order for the OLEDs to work.](docs/oled.md)
+[Additional steps required for OLED support.](docs/oled.md)
 
 ### RGB support:
-[Additional steps in order for RGB to work.](docs/rgb.md)
+[Additional steps required for RGB support.](docs/rgb.md)
 
 ### Hide device storage by default
 If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
