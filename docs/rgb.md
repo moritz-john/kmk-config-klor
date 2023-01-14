@@ -66,6 +66,13 @@ Instead of using **RGB codes**, such as `[255,55,55]`, one can use **Color class
 Uncomment `# from kmk.extensions.peg_rgb_matrix import Color` in [`kb.py`](../kb.py#L8) to activate this feature.\
 [HERE](https://github.com/KMKfw/kmk_firmware/blob/master/kmk/extensions/peg_rgb_matrix.py#L10) is a list of predefined color names.
 
+It is possible to mix and match RGB codes with Color classes e.g.:
+```python
+rgb_data = [
+    Color.BLUE, [0, 255, 128], Color.RED, [...]
+]
+```
+
 You can't adjust colors at runtime with `peg_rgb` via keycodes.
 
  ## 5) Add RGB keycodes to your keymap

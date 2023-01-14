@@ -37,3 +37,13 @@ corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE","LOWER","TEST"]},
 corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","sym","testing"]}   
 ```
 
+## 4) Possible tweaks
+
+The `SSD1306 128x64 pixel OLED Displays` is not offically supported by KMK, only the `128x32 pixel` version is.
+
+If you want to display photos on your OLED as per [this instructions](http://kmkfw.io/docs/peg_oled_display#photos) you might need to uncomment `# oHeight=64,` in the OLED code block. 
+
+> **Note**
+> Displaying photos on the OLED has not been tested and might require additonal code changes.
+
+If you uncomment `# oHeight=64,` while displaying [text](http://kmkfw.io/docs/peg_oled_display#text) the font becomes smaller, so you can display more words, but everything is moved to the top left corner. 
