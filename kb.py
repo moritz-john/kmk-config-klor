@@ -5,6 +5,7 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins # Cha
 from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
+# from kmk.extensions.peg_rgb_matrix import Color
 
 
 #DO NOT CHANGE / EDIT 'led_positions':
@@ -115,7 +116,7 @@ class KMKKeyboard(_KMKKeyboard):
 
     # PEG_RGB code (per key RGB):
     def peg_rgb(self, led_display):
-        from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
+        from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data
 
         rgb_ext = Rgb_matrix(
             ledDisplay=led_display,
@@ -141,7 +142,7 @@ class KMKKeyboard(_KMKKeyboard):
 
             self.brightness_limit = 0.3                                         # Limit brightness to reduce power draw
             self.led_key_pos = self.trim_pos(pos_rgb, cuts[klor_variant])       # Exctract and trim the position data from the pos_rgb tuple according to a KLOR variant
-            self.num_pixels = len(self.trim_pos(pos_rgb, cuts[klor_variant]))   # Return the number of items in the exctracted and trimmed data from above
+            self.num_pixels = len(self.led_key_pos)  # Return the number of items in the exctracted and trimmed data from above
 
             self.peg_rgb(self.trim_display(pos_rgb, cuts[klor_variant]))        # Pass the specifig [R, G, B] data for a KLOR variant via 'led_display' into peg_rgb()
 
