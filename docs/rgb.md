@@ -32,9 +32,10 @@ klor_speaker = False
 If you need to address LEDs individually (so change specific LEDs to a different color) use [`peg_rgb`](http://kmkfw.io/docs/peg_rgb_matrix/) in any other case use the more powerful [`basic_rgb`](http://kmkfw.io/docs/rgb/) implementation.\
 *I would recommend going with `basic_rgb`!*
 
-## 4a) Customize "Basic" RGB
+## 4) Customize your RGB expierience
+### 4.1 "Basic" RGB
 
-*You can find the code in your [`kb.py`](../kb.py#L113) file.*
+*You can find the code in your [`kb.py`](../kb.py#L114) file.*
 
 ```python
 rgb = RGB(pixel_pin=self.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=20,)
@@ -43,9 +44,11 @@ rgb = RGB(pixel_pin=self.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_def
 Consider changing `hue_default`, `sat_default` or `val_default`. Use a value in the range `0-255`.\
 Read more about this here: http://kmkfw.io/docs/rgb/#configuration
 
-## 4b) Customize PEG RGB
+You can also change the colors and much more at runtime via [RGB keycodes](http://kmkfw.io/docs/rgb/#keycodes).
 
-*You can find the code in your [`kb.py`](../kb.py#L19) file.*
+### 4.2 PEG RGB
+
+*You can find the code in your [`kb.py`](../kb.py#L20) file.*
 
 ```python
 rgb_data = [
@@ -55,13 +58,16 @@ rgb_data = [
                                                              [254, 255, 0], [251, 64, 0], [247, 0, 122], [188, 0, 249],   [188, 0, 249], [247, 0, 122],[251, 64, 0], [254, 255, 0],
 ]
 ```
-Each `[R, G, B]` list matches a KLOR key as seen in [`led_positions`](../kb.py#L11).\
+Each `[R, G, B]` list matches a KLOR key as seen in [`led_positions`](../kb.py#L12).\
 Keep in mind that some KLOR variants have less keys.\
 Adjust `[R, G, B]` with a value between `[0-255, 0-255, 0-255]`.
 
 
-You can also use **Color classes** like `Color.RED` instead of **RGB codes** (e.g.: `[255,55,55]`). 
-Uncomment `# from kmk.extensions.peg_rgb_matrix import Color` in [`kb.py`](../kb.py#L8).
+Instead of using **RGB codes**, such as `[255,55,55]`, one can use **Color classes** like `Color.RED` or `Color.GREEN`. 
+Uncomment `# from kmk.extensions.peg_rgb_matrix import Color` in [`kb.py`](../kb.py#L8) to activate this feature.\
+[HERE](https://github.com/KMKfw/kmk_firmware/blob/master/kmk/extensions/peg_rgb_matrix.py#L10) is a list of predefined color names.
+
+You can't adjust colors at runtime with `peg_rgb` via keycodes.
 
  ## 5) Add RGB keycodes to your keymap
 
