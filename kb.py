@@ -86,7 +86,7 @@ class KMKKeyboard(_KMKKeyboard):
                     ),
                     toDisplay=OledDisplayMode.TXT,
                     flip=True,
-                    oHeight=64,
+                    # oHeight=64,                               
             )
             self.extensions.append(oled_ext)
 
