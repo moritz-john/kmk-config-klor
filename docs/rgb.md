@@ -58,12 +58,11 @@ rgb_data = [
                                                              [254, 255, 0], [251, 64, 0], [247, 0, 122], [188, 0, 249],   [188, 0, 249], [247, 0, 122],[251, 64, 0], [254, 255, 0],
 ]
 ```
-Each `[R, G, B]` list matches a KLOR key as seen in [`led_positions`](../kb.py#L12).\
-Keep in mind that some KLOR variants have less keys.\
+Each `[R, G, B]` list matches a KLOR key as seen in [`led_positions`](../kb.py#L12). Keep in mind that some KLOR variants have less keys.\
 Adjust `[R, G, B]` with a value between `[0-255, 0-255, 0-255]`.
 
 
-Instead of using **RGB codes**, such as `[255,55,55]`, one can use **Color classes** like `Color.RED` or `Color.GREEN`. 
+Instead of using **RGB codes**, such as `[255,55,55]`, one can use **Color classes** like `Color.RED` or `Color.GREEN`.\
 Uncomment `# from kmk.extensions.peg_rgb_matrix import Color` in [`kb.py`](../kb.py#L8) to activate this feature.\
 [HERE](https://github.com/KMKfw/kmk_firmware/blob/master/kmk/extensions/peg_rgb_matrix.py#L10) is a list of predefined color names.
 
