@@ -6,7 +6,8 @@
 > **Double push reset button**: 
 > UF2 Bootloader mode - USB drive is called "RPI-RP2"
 
-
+> **Note**
+> This firmware has been tested on **CircuitPython (stable) 7.3.3**
 ## Installation
 Follow the [KMK firmware TL;DR Quick start guide](http://kmkfw.io/docs/Getting_Started/#tldr-quick-start-guide) or the steps bellow:
 

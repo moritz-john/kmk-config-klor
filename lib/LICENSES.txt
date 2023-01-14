@@ -1,4 +1,5 @@
 - Adafruit_CircuitPython_DisplayIO_SSD1306:
+https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_SSD1306
 
 The MIT License (MIT)
 
@@ -23,6 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 - Adafruit_CircuitPython_Display_Text:
+https://github.com/adafruit/Adafruit_CircuitPython_Display_Text
 
 The MIT License (MIT)
 
@@ -47,6 +49,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 - Adafruit_CircuitPython_NeoPixel:
+https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel
 
 The MIT License (MIT)
 
