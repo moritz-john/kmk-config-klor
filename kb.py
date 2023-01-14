@@ -16,7 +16,7 @@ led_positions = [
                      9,  2, 1, 0,    21, 22, 23, 30,
 ]
 
-#CHANGE / EDIT your [R, G, B] values HERE if you set the variable klor_rgb = 'peg_rgb' and you want to use per key RGB:
+#CHANGE / EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
 rgb_data = [
                  [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255],
     [0, 0, 255], [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255], [0, 0, 255],
@@ -34,7 +34,6 @@ cuts = {
     "yubitsume": [19, 20, 40, 41],
     "saegewerk": [0, 19, 20, 21, 40, 41]
 }
-
 
 class KMKKeyboard(_KMKKeyboard):
     def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
@@ -142,7 +141,7 @@ class KMKKeyboard(_KMKKeyboard):
 
             self.brightness_limit = 0.3                                         # Limit brightness to reduce power draw
             self.led_key_pos = self.trim_pos(pos_rgb, cuts[klor_variant])       # Exctract and trim the position data from the pos_rgb tuple according to a KLOR variant
-            self.num_pixels = len(self.led_key_pos)  # Return the number of items in the exctracted and trimmed data from above
+            self.num_pixels = len(self.led_key_pos)                             # Return the number of items in the exctracted and trimmed data from above
 
             self.peg_rgb(self.trim_display(pos_rgb, cuts[klor_variant]))        # Pass the specifig [R, G, B] data for a KLOR variant via 'led_display' into peg_rgb()
 
