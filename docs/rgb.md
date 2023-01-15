@@ -4,7 +4,7 @@
 ## 1) Add the necessary library
 In order to use RGB you have to install one library into your keyboard's `'lib'` folder:
 
-You can find the necessary library included in the `klor_kmk_firmware.zip` release.\
+You can find the necessary library included in the [`klor_kmk_firmware.zip` release](https://github.com/moritz-john/kmk-config-klor/releases).\
 **or**\
 You can download it yourself from here: [adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
 

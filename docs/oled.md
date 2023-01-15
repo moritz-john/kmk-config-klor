@@ -4,7 +4,7 @@
 ## 1) Add the necessary libraries
 In order to use OLEDs you have to install two libraries into your keyboard's `'lib'` folder:
 
-You can find the necessary libraries included in the `klor_kmk_firmware.zip` release.\
+You can find the necessary libraries included in the [`klor_kmk_firmware.zip` release](https://github.com/moritz-john/kmk-config-klor/releases).\
 **or**\
 You can download them yourself from here: [adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
 
