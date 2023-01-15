@@ -31,7 +31,7 @@ If you need to address LEDs individually (so change specific LEDs to a different
 
 ## 4) Customize your RGB expierience
 ### 4.1 Basic RGB
-*You can find the code in your [`kb.py`](../kb.py#L148) file.*
+*You can find the code in your [`kb.py`](../kb.py#L149) file.*
 
 ```python
         rgb = RGB(
@@ -50,7 +50,7 @@ Read more about this here: http://kmkfw.io/docs/rgb/#configuration
 You can also change the colors and much more at runtime via [RGB keycodes](http://kmkfw.io/docs/rgb/#keycodes).
 
 ### 4.2 PEG RGB
-*You can find the code in your [`kb.py`](../kb.py#L23) file.*
+*You can find the code in your [`kb.py`](../kb.py#L24) file.*
 
 ```python
 rgb_data = [

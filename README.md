@@ -4,7 +4,7 @@
 
 
 # KMK Firmware for KLOR Keyboard
-*KLOR is a 36-42 keys column-staggered split keyboard. It supports encoders, OLED displays, the SplitKB tenting puck and four different layouts, through break off parts.*
+*KLOR is a 36-42 key column-staggered split keyboard. It supports encoders, OLED displays, the SplitKB tenting puck and four different layouts, through break off parts.*
 
 Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
 

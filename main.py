@@ -9,7 +9,7 @@ from kmk.modules.split import Split, SplitType, SplitSide
 # fmt: off
 # ↓↓↓ EDIT CONFIG HERE ↓↓↓
 klor_variant = "saegewerk"  # Options: "polydactyl", "konrad", "yubitsume", "saegewerk"
-klor_rgb = "none"           # Options:"basic_rgb", "peg_rgb", "none"
+klor_rgb = "none"           # Options: "basic_rgb", "peg_rgb", "none"
 klor_oled = False           # Options: True, False
 klor_speaker = False        # Options: True, False
 # ↑↑↑ EDIT CONFIG HERE ↑↑↑

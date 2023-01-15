@@ -29,7 +29,7 @@ klor_speaker = False
 ## 3) Customize your OLED text
 When you add more layers to your keymap, also add them to this part your OLED code e.g.:
 
-*You can find the code in your [`kb.py`](../kb.py#L102) file.
+*You can find the code in your [`kb.py`](../kb.py#L103) file.
 
 ```python
             oled_ext = Oled(
