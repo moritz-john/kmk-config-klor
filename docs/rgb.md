@@ -1,6 +1,6 @@
 # RGB
 
->tl;dr: add library to your keyboard, set `klor_rgb = 'basic_rgb' OR 'peg_rgb'`, customize your RGB code and add rgb keycodes to your keymap to control your lighting.
+>tl;dr: add library to your keyboard, set `klor_rgb = "basic_rgb" OR "peg_rgb"`, customize your RGB code and add rgb keycodes to your keymap to control your lighting.
 ## 1) Add the necessary library
 In order to use RGB you have to install one library into your keyboard's `'lib'` folder:
 
@@ -27,13 +27,13 @@ klor_rgb = "none"  #<- Change this to "basic_rgb" OR "peg_rgb"
 klor_oled = False
 klor_speaker = False
 ```
-## 3) "Basic" RGB vs PEG RGB
+## 3) Basic RGB vs PEG RGB
 
 If you need to address LEDs individually (so change specific LEDs to a different color) use [`peg_rgb`](http://kmkfw.io/docs/peg_rgb_matrix/) in any other case use the more powerful [`basic_rgb`](http://kmkfw.io/docs/rgb/) implementation.\
-*I would recommend going with `basic_rgb`!*
+*I would recommend going with `basic_rgb`.*
 
 ## 4) Customize your RGB expierience
-### 4.1 "Basic" RGB
+### 4.1 Basic RGB
 
 *You can find the code in your [`kb.py`](../kb.py#L148) file.*
 

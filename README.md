@@ -11,7 +11,7 @@ Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
 `main.py` & `kb.py` only represent a basic framework.\
 Adjust the keymap to your liking and enable RGB & OLED support if needed.
 ## Installation
-[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py`, `main.py` & `lib` folder (if you plan to use OLEDs or RGB)
+[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py`, `main.py` & `lib` (if you plan on using OLEDs or RGB)
 
 ## Microcontroller support
 `kb.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `kb.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
