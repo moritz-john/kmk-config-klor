@@ -57,7 +57,6 @@ When you add more layers to your keymap, also add them to this part your OLED co
 ```
 
 ## 4) Possible Tweaks
-
 The `SSD1306 128x64 pixel OLED Displays` is not offically supported by KMK, only the `128x32 pixel` version is.
 
 If you want to display photos on your OLED as per [this instructions](http://kmkfw.io/docs/peg_oled_display#photos) you might need to uncomment `# oHeight=64,` in the OLED code block. 

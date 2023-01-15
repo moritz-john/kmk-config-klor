@@ -17,9 +17,7 @@ KMK is a keyboard focused layer that sits on top of CircuitPython.
 Rename your microcontrollers / USB drives to "KLORL" (for the left keyboard side) and "KLORR" (for the right keyboard side) in order for KMK to figure out which side is which. 
 
   Follow this tutorial: ["Renaming CIRCUITPY through CircuitPython"](https://learn.adafruit.com/welcome-to-circuitpython/renaming-circuitpy#renaming-circuitpy-through-circuitpython-3014813)
-
 **OR**
-
 - take the [`utilities/rename_klor_left/boot.py`](/utilities/rename_klor_left/boot.py) file and drag it on your **left** microcontroller (currently named: "CIRCUITPY")
 - take the [`utilities/rename_klor_right/boot.py`](/utilities/rename_klor_right/boot.py) file and drag it on your **right** microcontroller (currently named: "CIRCUITPY")
 
