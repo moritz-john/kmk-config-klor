@@ -10,7 +10,7 @@ Here is how to hide your microcontroller(s) from showing up as a USB storage by 
   <img alt="KLOR KMK logo" src="images/hold_key_device_storage.svg">
 </p>
 
-### Microcontroller support:
+### Microcontroller support
 `boot.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `boot.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
 
 ```python
