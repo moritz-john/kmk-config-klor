@@ -30,6 +30,7 @@ klor_speaker = False
 When you add more layers to your keymap, also add them to this part your OLED code e.g.:
 
 *You can find the code in your [`kb.py`](../kb.py#L102) file.
+
 ```python
             oled_ext = Oled(
                 OledData(

@@ -19,7 +19,6 @@ You can download it yourself from here: [adafruit-circuitpython-bundle-7.x-mpy-Y
 ## 2) Chose your RGB mode
 Afterwards you have to change the variable `klor_rgb` from `"none"` to either `"basic_rgb"` **or** `"peg_rgb"` in your [`main.py`](../main.py) file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
 
-
 ```python
 klor_variant = "saegewerk" #<- Change this to your own KLOR variant: "polydactyl", "konrad", "yubitsume", "saegewerk"
 klor_rgb = "none"  #<- Change this to "basic_rgb" OR "peg_rgb"
