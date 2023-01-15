@@ -18,13 +18,13 @@ You can download it yourself from here: [adafruit-circuitpython-bundle-7.x-mpy-Y
 
 ## 2) Chose your RGB mode
 
-Afterwards you have to change the variable `klor_rgb` from `'none'` to either `'basic_rgb'` **or** `'peg_rgb'` in your [`main.py`](../main.py) file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
+Afterwards you have to change the variable `klor_rgb` from `"none"` to either `"basic_rgb"` **or** `"peg_rgb"` in your [`main.py`](../main.py) file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
 
 
 ```python
-klor_variant = 'saegewerk' #<- Change this to your own KLOR variant: 'polydactyl', 'konrad', 'yubitsume', 'saegewerk'
-klor_rgb     = 'none'      #<- Change this to `basic_rgb` OR `peg_rgb`
-klor_oled    = False
+klor_variant = "saegewerk" #<- Change this to your own KLOR variant: "polydactyl", "konrad", "yubitsume", "saegewerk"
+klor_rgb = "none"  #<- Change this to "basic_rgb" OR "peg_rgb"
+klor_oled = False
 klor_speaker = False
 ```
 ## 3) "Basic" RGB vs PEG RGB
@@ -35,10 +35,17 @@ If you need to address LEDs individually (so change specific LEDs to a different
 ## 4) Customize your RGB expierience
 ### 4.1 "Basic" RGB
 
-*You can find the code in your [`kb.py`](../kb.py#L114) file.*
+*You can find the code in your [`kb.py`](../kb.py#L148) file.*
 
 ```python
-rgb = RGB(pixel_pin=self.rgb_pixel_pin, num_pixels=pixels, val_limit=50, hue_default=0, sat_default=100, val_default=20,)
+        rgb = RGB(
+            pixel_pin=self.rgb_pixel_pin,
+            num_pixels=pixels,
+            val_limit=50,
+            hue_default=0,
+            sat_default=100,
+            val_default=20,
+        )
 ```
 
 Consider changing `hue_default`, `sat_default` or `val_default`. Use a value in the range `0-255`.\
@@ -48,7 +55,7 @@ You can also change the colors and much more at runtime via [RGB keycodes](http:
 
 ### 4.2 PEG RGB
 
-*You can find the code in your [`kb.py`](../kb.py#L20) file.*
+*You can find the code in your [`kb.py`](../kb.py#L23) file.*
 
 ```python
 rgb_data = [
@@ -73,7 +80,7 @@ rgb_data = [
 ]
 ```
 
-You can't adjust colors at runtime with `peg_rgb` via keycodes.
+You **can't** adjust colors at runtime with `peg_rgb` via keycodes.
 
  ## 5) Add RGB keycodes to your keymap
 

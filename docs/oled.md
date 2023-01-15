@@ -20,24 +20,43 @@ You can download them yourself from here: [adafruit-circuitpython-bundle-7.x-mpy
 Afterwards you have to change the variable `klor_oled` from `False` to `True` in your [`main.py`](../main.py) file:
 
 ```python
-klor_variant = 'saegewerk'
-klor_rgb     = 'none'
-klor_oled    = False       #<- Change this to True
-klor_speaker = False
+klor_variant = "saegewerk"
+klor_rgb = "none"         
+klor_oled = False          #<- Change this to True
+klor_speaker = False      
 ```
 
 ## 3) Customize your OLED text
 When you add more layers to your keymap, also add them to this part your OLED code e.g.:
 
-*You can find the code in your [`kb.py`](../kb.py#L76) file.
+*You can find the code in your [`kb.py`](../kb.py#L102) file.
 ```python
-corner_one={0:OledReactionType.STATIC,1:["Layer"]},                
-corner_two={0:OledReactionType.LAYER,1:["0","1","2","3"]},             
-corner_three={0:OledReactionType.LAYER,1:["BASE","RAISE","LOWER","TEST"]},
-corner_four={0:OledReactionType.LAYER,1:["qwerty","nums","sym","testing"]}   
+            oled_ext = Oled(
+                OledData(
+                    corner_one={
+                        0: OledReactionType.STATIC,
+                        1: ["Layer"],
+                    },
+                    corner_two={
+                        0: OledReactionType.LAYER,
+                        1: ["0", "1", "2", "3"],
+                    },
+                    corner_three={
+                        0: OledReactionType.LAYER,
+                        1: ["BASE", "RAISE", "LOWER", "TESTLAYER"],
+                    },
+                    corner_four={
+                        0: OledReactionType.LAYER,
+                        1: ["qwerty", "nums", "sym", "test"],
+                    },
+                ),
+                toDisplay=OledDisplayMode.TXT,
+                flip=True,
+                # oHeight=64,
+            ) 
 ```
 
-## 4) Possible tweaks
+## 4) Possible Tweaks
 
 The `SSD1306 128x64 pixel OLED Displays` is not offically supported by KMK, only the `128x32 pixel` version is.
 
