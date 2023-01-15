@@ -2,6 +2,7 @@ import board
 
 from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
+from kmk.scanners import DiodeOrientation
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
