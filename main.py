@@ -6,12 +6,14 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 
-# ↓↓↓ CHANGE CONFIG HERE ↓↓↓
-klor_variant = 'saegewerk'      # 'polydactyl', 'konrad', 'yubitsume', 'saegewerk'
-klor_rgb     = 'none'           # 'basic_rgb', 'peg_rgb' - If you are unsure pick 'basic_rgb': it's currently easier to use and you can do more at runtime.
-klor_oled    = False            # True
-klor_speaker = False            # False
-# ↑↑↑ CHANGE CONFIG HERE ↑↑↑
+# fmt: off
+# ↓↓↓ EDIT CONFIG HERE ↓↓↓
+klor_variant = "saegewerk"  # Options: "polydactyl", "konrad", "yubitsume", "saegewerk"
+klor_rgb = "none"           # Options:"basic_rgb", "peg_rgb", "none"
+klor_oled = False           # Options: True, False
+klor_speaker = False        # Options: True, False
+# ↑↑↑ EDIT CONFIG HERE ↑↑↑
+# fmt: on
 
 keyboard = KMKKeyboard(klor_rgb, klor_variant, klor_oled, klor_speaker)
 
@@ -21,7 +23,7 @@ keyboard.extensions.append(MediaKeys())
 # Enable debugging: http://kmkfw.io/docs/debugging/
 # keyboard.debug_enabled = True
 
-# Split code starts here ---
+# Split Code:
 split = Split(
     split_flip=True,  # If both halves are the same, but flipped, set this True
     split_side=None,  # Sets if this is to SplitSide.LEFT or SplitSide.RIGHT, or use EE hands
@@ -32,7 +34,7 @@ split = Split(
     use_pio=True,  # Use RP2040 PIO implementation of UART. Required if you want to use other pins than RX/TX
 )
 keyboard.modules.append(split)
-# Split code ends here ---
+
 
 # Key aliases
 xxxxxxx = KC.NO
@@ -41,6 +43,7 @@ RAISE = KC.MO(1)
 LOWER = KC.MO(2)
 
 # Keymap
+# fmt: off
 keyboard.keymap = [
     [
        #BASE
@@ -51,10 +54,10 @@ keyboard.keymap = [
                         KC.LCTL,   LOWER,  KC.SPC,   KC.N4,                       KC.N4, KC.BSPC,   RAISE,  KC.ENT,
 
         # Encoders
-        KC.AUDIO_VOL_UP,     #Left side clockwise
-        KC.AUDIO_VOL_DOWN,   #Left side counterclockwise
-        KC.MEDIA_NEXT_TRACK, #Right side clockwise
-        KC.MEDIA_PREV_TRACK, #Right side counterclockwise
+        KC.AUDIO_VOL_UP,      #Left side clockwise
+        KC.AUDIO_VOL_DOWN,    #Left side counterclockwise
+        KC.MEDIA_NEXT_TRACK,  #Right side clockwise
+        KC.MEDIA_PREV_TRACK,  #Right side counterclockwise
     ],
     [
        #RAISE
@@ -65,10 +68,10 @@ keyboard.keymap = [
                         xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                     xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
 
         # Encoders
-        KC.PGUP,    #Left side clockwise
-        KC.PGDN,    #Left side counterclockwise
-        KC.RIGHT,   #Right side clockwise
-        KC.LEFT,    #Right side counterclockwise
+        KC.PGUP,  #Left side clockwise
+        KC.PGDN,  #Left side counterclockwise
+        KC.RIGHT, #Right side clockwise
+        KC.LEFT,  #Right side counterclockwise
     ],
     [
        #LOWER
@@ -79,13 +82,13 @@ keyboard.keymap = [
                         xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                     xxxxxxx,  KC.ENT, xxxxxxx,  KC.DEL,
 
         # Encoders
-        KC.AUDIO_VOL_UP,     #Left side clockwise
-        KC.AUDIO_VOL_DOWN,   #Left side counterclockwise
-        KC.MEDIA_NEXT_TRACK, #Right side clockwise
-        KC.MEDIA_PREV_TRACK, #Right side counterclockwise
+        KC.AUDIO_VOL_UP,      #Left side clockwise
+        KC.AUDIO_VOL_DOWN,    #Left side counterclockwise
+        KC.MEDIA_NEXT_TRACK,  #Right side clockwise
+        KC.MEDIA_PREV_TRACK,  #Right side counterclockwise
     ],
 ]
+# fmt: on
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     keyboard.go()
