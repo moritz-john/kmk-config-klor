@@ -1,0 +1,39 @@
+site_name: KMK KLOR Firmware
+theme:
+  name: material
+  palette: 
+    scheme: slate
+    primary: light blue
+    accent: deep orange
+  features:
+# Navigation tabs at the top of the page
+    - navigation.tabs
+    - navigation.tabs.sticky
+  
+markdown_extensions:
+# align images, add captions to images 
+  - attr_list
+  - md_in_html
+# syntax highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+# content tabs
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+# admonitions
+  - admonition
+  - pymdownx.details
+# lists
+  - def_list
+
+
+
+nav:
+  - Getting Started: index.md
+  - Install KMK Firmware: installation.md
+  - Setup OLED: oled.md
+  - Setup RGB: rgb.md
+  - Hide Storage: hide_device_storage.md
