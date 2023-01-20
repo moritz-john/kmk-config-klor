@@ -1,6 +1,9 @@
 site_name: KMK KLOR Firmware
 theme:
   name: material
+  logo: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
   palette: 
     scheme: slate
     primary: light blue
@@ -9,6 +12,7 @@ theme:
 # Navigation tabs at the top of the page
     - navigation.tabs
     - navigation.tabs.sticky
+
   
 markdown_extensions:
 # align images, add captions to images 
@@ -29,6 +33,10 @@ markdown_extensions:
 # lists
   - def_list
 
+extra_css:
+  - stylesheets/extra.css
+
+repo_url: https://github.com/moritz-john/kmk-config-klor
 
 
 nav:
