@@ -8,8 +8,8 @@ from kmk.scanners.encoder import RotaryioEncoder
 # from kmk.extensions.peg_rgb_matrix import Color
 
 
-# DO NOT EDIT 'led_positions':
 # fmt: off
+# DO NOT EDIT 'led_positions':
 led_positions = [
         18, 13, 12,  6,  5,                  26, 27, 33, 34, 39,
     19, 17, 14, 11,  7,  4,                  25, 28, 32, 35, 38, 40,
