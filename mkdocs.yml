@@ -1,3 +1,7 @@
+
+site_url: https://github.com/moritz-john/kmk-config-klor
+repo_url: https://github.com/moritz-john/kmk-config-klor
+
 site_name: KMK KLOR Firmware Documentation
 theme:
   name: material
@@ -9,9 +13,8 @@ theme:
   icon:
     repo: fontawesome/brands/github
   favicon: images/favicon.png
-
   features:
-# Navigation tabs at the top of the page
+  # Navigation tabs at the top of the page
     - navigation.tabs
     - navigation.tabs.sticky
   
@@ -39,17 +42,9 @@ markdown_extensions:
 
 plugins:
   - social
-
-# Github repo URL
-repo_url: https://github.com/moritz-john/kmk-config-klor
-# Website URL
-site_url: https://github.com/moritz-john/kmk-config-klor
-
-
 nav:
   - index.md
   - installation.md
   - oled.md
   - rgb.md
   - hide_device_storage.md
-  # - Github: https://github.com/moritz-john/kmk-config-klor
