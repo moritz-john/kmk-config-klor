@@ -8,36 +8,15 @@
 
 Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
 
-`main.py` & `kb.py` only represent a basic framework.\
-Adjust the keymap to your liking and enable RGB & OLED support if needed.
-## Installation
-[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py`, `main.py` & `lib` (if you plan on using OLEDs or RGB)
-
-## Microcontroller support
-`kb.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `kb.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
-
-```python
-from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
-```
-
-## OLED Support
-[Additional steps required for OLED support.](docs/oled.md)
-
-## RGB support
-[Additional steps required for RGB support.](docs/rgb.md)
-
-## Hide device storage by default
-If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
-
-
+# [Documentation & Installation instructions](https://moritz-john.github.io/kmk-config-klor/)
 ### Modules/extensions implemented
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)
 - [Media Keys](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/media_keys.md)
-- [OLED](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *disabled by default*
-- [RGB/Underglow/NeoPixel](http://kmkfw.io/docs/rgb) *disabled by default*
-- [Peg RGB Matrix](http://kmkfw.io/docs/peg_rgb_matrix/) *disabled by default*
-- [Encoders](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
+- [**OLED**](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md) *disabled by default*
+- [**RGB/Underglow/NeoPixel**](http://kmkfw.io/docs/rgb) *disabled by default*
+- [**Peg RGB Matrix**](http://kmkfw.io/docs/peg_rgb_matrix/) *disabled by default*
+- [**Encoders**](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/scanners.md#rotary-encoder-scanners) *working on both halfes via Rotary Encoder Scanners!*
 - Buzzer / Speaker (via custom code)
 
 ### Not implemented

@@ -1,0 +1,55 @@
+site_name: KMK KLOR Firmware Documentation
+theme:
+  name: material
+  palette: 
+    scheme: slate
+    primary: blue grey
+    accent: deep orange
+  logo: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  favicon: images/favicon.png
+
+  features:
+# Navigation tabs at the top of the page
+    - navigation.tabs
+    - navigation.tabs.sticky
+  
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+# align images, add captions to images 
+  - attr_list
+  - md_in_html
+# syntax highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+# content tabs
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+# admonitions
+  - admonition
+  - pymdownx.details
+# lists
+  - def_list
+
+plugins:
+  - social
+
+# Github repo URL
+repo_url: https://github.com/moritz-john/kmk-config-klor
+# Website URL
+site_url: https://github.com/moritz-john/kmk-config-klor
+
+
+nav:
+  - index.md
+  - installation.md
+  - oled.md
+  - rgb.md
+  - hide_device_storage.md
+  # - Github: https://github.com/moritz-john/kmk-config-klor
