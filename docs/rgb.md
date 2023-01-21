@@ -1,13 +1,13 @@
 ---
+title: Setup RGB
+description: How to setup RGB on your KLOR
 hide:
 # Hide navigation bar on left side
   - navigation
 ---
 
-# Setup RGB
-
-!!! example "tl;dr"
-    Add library to your keyboard drive, set `klor_rgb = "basic_rgb"` **or** `"peg_rgb"`, customize your RGB code and add RGB keycodes to your keymap to control your lighting.
+!!! tip "tl;dr"
+    Add library to your keyboard drive, set `:::py klor_rgb = "basic_rgb"` **or** `:::py "peg_rgb"`, customize your RGB code and add RGB keycodes to your keymap to control your lighting.
 ## Add the necessary library
 In order to use RGB you have to install one library into your keyboard's `'lib'` folder:
 
@@ -43,17 +43,10 @@ If you need to address LEDs individually (so change specific LEDs to a different
 ## Customize your RGB expierience
 ### Basic RGB
 
-*You can find the code in your [`kb.py`](../kb.py#L149) file.*
+*You can find the code in your [`kb.py`](kb.py) file.*
 
-```python
-rgb = RGB(
-    pixel_pin=self.rgb_pixel_pin,
-    num_pixels=pixels,
-    val_limit=50,
-    hue_default=0,
-    sat_default=100,
-    val_default=20,
-)
+```py title="kb.py"
+--8<-- './kb.py:rgb'
 ```
 
 Consider changing `hue_default`, `sat_default` or `val_default`. Use a value in the range `0-255`.  
@@ -63,24 +56,24 @@ You can also change the colors and much more at runtime via [RGB keycodes](http:
 
 ### PEG RGB
 
-*You can find the code in your [`kb.py`](kb.py#L24) file.*
+*You can find the code in your `kb.py` file.*
 
-```python
-rgb_data = [
-    [0, 191, 255], [0, 255, 128], [63, 255, 0], #[...]
-]
+```py title="kb.py"
+--8<-- './kb.py:rgbdata'
 ```
-Each `[R, G, B]` list matches a KLOR key as seen in [`led_positions`](../kb.py#L12). Keep in mind that some KLOR variants have less keys.  
+
+Each `[R, G, B]` list matches a KLOR key as seen in `led_positions`. Keep in mind that some KLOR variants have less keys.  
 Adjust `[R, G, B]` with a value between `[0-255, 0-255, 0-255]`.
 
+___
 
 Instead of using **RGB codes**, such as `[255,55,55]`, one can use **Color classes** like `Color.RED` or `Color.GREEN`.  
-Uncomment `# from kmk.extensions.peg_rgb_matrix import Color` in [`kb.py`](../kb.py#L8) to activate this feature.  
+Uncomment `:::py from kmk.extensions.peg_rgb_matrix import Color` in `kb.py` (by removing the `#` infront of it) to activate this feature.  
 [HERE](https://github.com/KMKfw/kmk_firmware/blob/master/kmk/extensions/peg_rgb_matrix.py#L10) is a list of predefined color names.
 
 It is possible to mix and match RGB codes with Color classes e.g.:
 
-```python
+```py title="Example: RGB codes mixed with Color classes"
 rgb_data = [
     Color.BLUE, [0, 255, 128], Color.RED, #[...]
 ]

@@ -21,12 +21,14 @@ led_positions = [
 
 # EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
 # fmt: off 
+# --8<-- [start:rgbdata]
 rgb_data = [
                  [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255],
     [0, 0, 255], [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255], [0, 0, 255],
     [0, 0, 255], [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255], [0, 0, 255],
                                                              [254, 255, 0], [251, 64, 0], [247, 0, 122], [188, 0, 249],   [188, 0, 249], [247, 0, 122],[251, 64, 0], [254, 255, 0],
 ]
+# --8<-- [end:rgbdata]
 # fmt: on
 
 # Creates a tuple containing both LED position and RGB data
@@ -100,6 +102,7 @@ class KMKKeyboard(_KMKKeyboard):
                 OledData,
             )
 
+            # --8<-- [start:oled]
             oled_ext = Oled(
                 OledData(
                     corner_one={
@@ -123,6 +126,7 @@ class KMKKeyboard(_KMKKeyboard):
                 flip=True,
                 # oHeight=64,
             )
+            # --8<-- [end:oled]
             self.extensions.append(oled_ext)
 
     # Speaker Code:
@@ -146,6 +150,7 @@ class KMKKeyboard(_KMKKeyboard):
     def basic_rgb(self, pixels):
         from kmk.extensions.RGB import RGB
 
+        # --8<-- [start:rgb]
         rgb = RGB(
             pixel_pin=self.rgb_pixel_pin,
             num_pixels=pixels,
@@ -154,6 +159,7 @@ class KMKKeyboard(_KMKKeyboard):
             sat_default=100,
             val_default=20,
         )
+        # --8<-- [end:rgb]
         self.extensions.append(rgb)
 
     # PEG_RGB code (per key RGB):

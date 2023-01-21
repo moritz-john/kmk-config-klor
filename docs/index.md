@@ -1,44 +1,37 @@
 ---
+title: Home
+description: Getting started using the KMK Klor Firmware
 hide:
 # Hide navigation bar on left side
   - navigation
+  - toc
 ---
-
-# KMK Firmware for KLOR Keyboard
-
-!!! info
+!!! info inline end
     `main.py` & `kb.py` only represent a basic framework.  
-    Adjust the keymap to your liking and enable RGB & OLED support if needed.
-
+    Adjust the keymap to your liking and enable RGB & OLED support if you want.
+    
 <figure markdown>
-  ![Image title](docs/../images/klor_kmk.svg){ width="800" }
+  ![Image title](./images/klor_kmk.svg){ width="800" }
   <figcaption></figcaption>
 </figure>
 
+## Installation
 
+Follow these steps:  
+1. [Install CircuitPython, rename microcontroller, install KMK](./installation.md)  
+2. [Copy `kb.py`, `main.py` & `lib` to your KLOR](./installation.md)
 
-## Setup
-### Installation
-[Install CircuitPython, rename microcontroller, install KMK](docs/installation.md) + `kb.py`, `main.py` & `lib` (if you plan on using OLEDs or RGB)
-
-### Microcontroller support
-`kb.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `kb.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
+## Microcontroller support
+[`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/kb.py) is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `kb.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
 
 ```python
 from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 ```
-### Optional
-#### OLED Support
-[Additional steps required for OLED support.](docs/oled.md)
+## Optional
 
-#### RGB support
-[Additional steps required for RGB support.](docs/rgb.md)
+### [OLED Setup](./oled.md)
+### [RGB Setup](./rgb.md)
 
-#### Hide device storage by default
-If you want to hide your keyboard from showing up as a USB storage [follow these steps](docs/hide_device_storage.md).
+### [Hide device storage by default](./hide_device_storage.md)
 
-!!! warning "Reset button"
-    **Single push reset button:**  
-    *Reboot microcontroller* - USB drive is called "CIRCUITPY" or e.g. "KLORL"  
-    **Double push reset button:**  
-    *UF2 Bootloader mode* - USB drive is called "RPI-RP2"
+
