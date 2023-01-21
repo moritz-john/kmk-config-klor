@@ -5,13 +5,13 @@
 
 /* Logo text */
 .md-ellipsis {
-    font-size: 140%;
+    /* font-size: 140%; */
 
 }
 
-/* Top tab link text */
+/* Top nav link text */
 .md-tabs__link {
-    font-size: 160%;
+    /* font-size: 160%; */
     /* color: black; */
 }
 

@@ -9,7 +9,7 @@ hide:
 # Setup OLED
 
 !!! tip "tl;dr"
-        Add libraries to your keyboard, set `klor_oled = True` and customize your OLED text
+        Add libraries to your keyboard, set `:::py klor_oled = True` and customize your OLED text
 ## Add the necessary libraries
 In order to use OLEDs you have to install two libraries into your keyboard's `'lib'` folder:
 

@@ -47,8 +47,8 @@ After a reboot the microcontroller should appear as "KLORL" and "KLORR" respecti
 ![Image title](images/install_kmk_drive.png){ width="500"}
 
 ## 3) Install KLOR firmware
-1. Download the `kb.py`, `main.py` & the `lib` folder from this repository and copy them onto your USB drive  
-You can also find those files in `klor_kmk_firmware.zip` from [GitHub releases](https://github.com/moritz-john/kmk-config-klor/releases)
+1. Download the `kb.py`, `main.py` & (optionally) the `lib` folder from this repository and copy them onto your USB drive  
+You can also find those files in `klor_kmk_firmware.zip` via [GitHub releases](https://github.com/moritz-john/kmk-config-klor/releases)
 2. Reboot
 
 Repeat those steps for both the left and right microcontroller.
