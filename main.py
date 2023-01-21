@@ -1,10 +1,7 @@
-import board
-
 from kb import KMKKeyboard
 from kmk.keys import KC
 from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
-from kmk.modules.split import Split, SplitType, SplitSide
 
 # fmt: off
 # ↓↓↓ EDIT CONFIG HERE ↓↓↓
@@ -15,25 +12,13 @@ klor_speaker = False        # Options: True, False
 # ↑↑↑ EDIT CONFIG HERE ↑↑↑
 # fmt: on
 
-keyboard = KMKKeyboard(klor_rgb, klor_variant, klor_oled, klor_speaker)
+keyboard = KMKKeyboard(klor_variant, klor_rgb, klor_oled, klor_speaker)
 
 keyboard.modules.append(Layers())
 keyboard.extensions.append(MediaKeys())
 
 # Enable debugging: http://kmkfw.io/docs/debugging/
 # keyboard.debug_enabled = True
-
-# Split Code:
-split = Split(
-    split_flip=True,  # If both halves are the same, but flipped, set this True
-    split_side=None,  # Sets if this is to SplitSide.LEFT or SplitSide.RIGHT, or use EE hands
-    split_type=SplitType.UART,  # Defaults to UART
-    uart_interval=20,  # Sets the uarts delay. Lower numbers draw more power
-    data_pin=keyboard.rx,  # The primary data pin to talk to the secondary device with
-    data_pin2=keyboard.tx,  # Second uart pin to allow 2 way communication
-    use_pio=True,  # Use RP2040 PIO implementation of UART. Required if you want to use other pins than RX/TX
-)
-keyboard.modules.append(split)
 
 
 # Key aliases
