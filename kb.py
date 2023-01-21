@@ -1,8 +1,7 @@
-import board
-
 from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
+from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 
@@ -44,7 +43,7 @@ cuts = {
 
 
 class KMKKeyboard(_KMKKeyboard):
-    def __init__(self, klor_rgb, klor_variant, klor_oled, klor_speaker):
+    def __init__(self, klor_variant, klor_rgb, klor_oled, klor_speaker):
         # create and register the scanner(s)
         self.matrix = [
             MatrixScanner(
@@ -64,9 +63,21 @@ class KMKKeyboard(_KMKKeyboard):
             ),
         ]
 
+        # Split code:
+        split = Split(
+            split_flip=True,  # If both halves are the same, but flipped, set this True
+            split_side=None,  # Sets if this is to SplitSide.LEFT or SplitSide.RIGHT, or use EE hands
+            split_type=SplitType.UART,  # Defaults to UART
+            uart_interval=20,  # Sets the uarts delay. Lower numbers draw more power
+            data_pin=self.rx,  # The primary data pin to talk to the secondary device with
+            data_pin2=self.tx,  # Second uart pin to allow 2 way communication
+            use_pio=True,  # Use RP2040 PIO implementation of UART. Required if you want to use other pins than RX/TX
+        )
+        self.modules.append(split)
+
         self.setup_oled(klor_oled)
         self.setup_speaker(klor_speaker)
-        self.setup_rgb(klor_rgb, klor_variant)
+        self.setup_rgb(klor_variant, klor_rgb)
 
     col_pins = (
         pins[17],
@@ -185,7 +196,7 @@ class KMKKeyboard(_KMKKeyboard):
         return [old_to_new[p] for p in cut_pos]
 
     # Setup for peg_rgb or basic_rgb:
-    def setup_rgb(self, klor_rgb, klor_variant):
+    def setup_rgb(self, klor_variant, klor_rgb):
         if klor_rgb == "peg_rgb":
 
             self.brightness_limit = 0.3
