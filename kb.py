@@ -19,8 +19,8 @@ led_positions = [
 ]
 # fmt: on
 
-# EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
 # fmt: off 
+# EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
 # --8<-- [start:rgbdata]
 rgb_data = [
                  [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255],
