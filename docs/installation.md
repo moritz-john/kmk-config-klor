@@ -1,6 +1,6 @@
 ---
 title: Install KMK Firmware
-description: How to install the KMK Klor 
+description: How to install the KMK Klor firmware
 hide:
 # Hide navigation bar on left side
   - navigation

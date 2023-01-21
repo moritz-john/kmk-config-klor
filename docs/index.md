@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Start using the KMK Klor Firmware
+description: Start using the KMK Klor firmware
 hide:
 # Hide navigation bar on left side
   - navigation
