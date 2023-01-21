@@ -44,7 +44,7 @@ When you add more layers to your keymap, also add them to this part your OLED co
 
 *You can find the code in your [`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/kb.py) file:*
 
-```python title="Example: adding a fourth layer called 'TESTLAYER' to the OLED code:"
+```python hl_lines="9 13 17" title="Example: adding a fourth layer called 'TESTLAYER' to the OLED code:"
 oled_ext = Oled(
     OledData(
         corner_one={
@@ -71,11 +71,11 @@ oled_ext = Oled(
 ```
 
 ## Possible Tweaks
-The `SSD1306 128x64 pixel OLED Displays` is not offically supported by KMK, only the `128x32 pixel` version is.
+The `'SSD1306 128x64 pixel OLED Displays'` is not offically supported by KMK, only the `'128x32 pixel'` version is.
 
 If you want to display photos on your OLED as per [this instructions](http://kmkfw.io/docs/peg_oled_display#photos) you might need to uncomment `# oHeight=64,` in the OLED code block. 
 
-> **Note**
-> Displaying photos on the OLED has not been tested on the KLOR and might require additonal code changes.
+!!! warning
+    Displaying photos on the KLOR's OLED has not been tested and might require additonal code changes.
 
 If you uncomment `# oHeight=64,` while displaying [text](http://kmkfw.io/docs/peg_oled_display#text) the font becomes smaller, so you can display more words, but everything is moved to the top left corner. 
