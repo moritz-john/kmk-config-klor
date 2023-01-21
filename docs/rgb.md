@@ -28,7 +28,7 @@ In order to use RGB you have to install one library into your keyboard's `'lib'`
 ![Image title](images/rgb_lib.png){ width="700"}
 
 ## Chose your RGB mode
-Afterwards you have to change the variable `klor_rgb` from `"none"` to either `"basic_rgb"` **or** `"peg_rgb"` in your [`main.py`](../main.py) file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
+Afterwards you have to change the variable `klor_rgb` from `"none"` to either `"basic_rgb"` **or** `"peg_rgb"` in your `main.py` file and also set `klor_variant` to your own [KLOR variant](https://github.com/GEIGEIGEIST/klor#layouts):
 
 ```python
 klor_variant = "saegewerk" #<- Change this to your own KLOR variant: "polydactyl", "konrad", "yubitsume", "saegewerk"
@@ -43,7 +43,7 @@ If you need to address LEDs individually (so change specific LEDs to a different
 ## Customize your RGB expierience
 ### Basic RGB
 
-*You can find the code in your [`kb.py`](kb.py) file.*
+*You can find the code in your `kb.py` file:*
 
 ```py title="kb.py"
 --8<-- './kb.py:rgb'
@@ -56,7 +56,7 @@ You can also change the colors and much more at runtime via [RGB keycodes](http:
 
 ### PEG RGB
 
-*You can find the code in your `kb.py` file.*
+*You can find the code in your `kb.py` file:*
 
 ```py title="kb.py"
 --8<-- './kb.py:rgbdata'

@@ -40,10 +40,9 @@ klor_speaker = False
 ```
 
 ## Customize your OLED text
-When you add more layers to your keymap, also add them to this part your OLED code e.g.:
+When you add more layers to your keymap, also add them to this part your OLED code.
 
-*You can find the code in your [`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/kb.py) file.*
-
+*You can find the code in your [`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/kb.py) file:*
 
 ```python title="Example: adding a fourth layer called 'TESTLAYER' to the OLED code:"
 oled_ext = Oled(
