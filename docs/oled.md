@@ -30,7 +30,7 @@ In order to use OLEDs you have to install two libraries into your keyboard's `'l
 ![Image title](images/oled_lib.png){ width="700"}
 
 ## Activate the OLED code
-Afterwards you have to change the variable `klor_oled` from `False` to `True` in your [`main.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/main.py) file:
+Afterwards you have to change the variable `klor_oled` from `False` to `True` in your [`main.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/firmware/main.py) file:
 
 ```python
 klor_variant = "saegewerk"
@@ -42,7 +42,7 @@ klor_speaker = False
 ## Customize your OLED text
 When you add more layers to your keymap, also add them to this part your OLED code.
 
-*You can find the code in your [`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/kb.py) file:*
+*You can find the code in your [`kb.py`](https://github.com/moritz-john/kmk-config-klor/blob/master/firmware/kb.py) file:*
 
 ```python hl_lines="9 13 17" title="Example: adding a fourth layer called 'TESTLAYER' to the OLED code:"
 oled_ext = Oled(

@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: vimtor/action-zip@v1
         with:
-          files: lib/ utilities/ kb.py main.py
+          files: firmware/lib/ firmware/utilities/ firmware/kb.py firmware/main.py
           recursive: false
           dest: klor_kmk_firmware.zip
       - name: Upload Release

@@ -18,9 +18,9 @@ led_positions = [
 ]
 # fmt: on
 
-# fmt: off 
-# EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
+# fmt: off
 # --8<-- [start:rgbdata]
+# EDIT your [R, G, B] values below if you set the variable klor_rgb = 'peg_rgb':
 rgb_data = [
                  [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255],
     [0, 0, 255], [0, 191, 255], [0, 255, 128], [63, 255, 0], [254, 255, 0], [251, 64, 0],                                                              [251, 64, 0], [254, 255, 0], [63, 255, 0], [0, 255, 128], [0, 191, 255], [0, 0, 255],
@@ -43,7 +43,13 @@ cuts = {
 
 
 class KMKKeyboard(_KMKKeyboard):
-    def __init__(self, klor_variant, klor_rgb, klor_oled, klor_speaker):
+    def __init__(
+        self,
+        klor_variant="saegewerk",
+        klor_rgb="none",
+        klor_oled=False,
+        klor_speaker=False,
+    ):
         # create and register the scanner(s)
         self.matrix = [
             MatrixScanner(
@@ -51,14 +57,13 @@ class KMKKeyboard(_KMKKeyboard):
                 column_pins=self.col_pins,
                 row_pins=self.row_pins,
                 # optional arguments with defaults:
-                columns_to_anodes=DiodeOrientation.COL2ROW,
+                columns_to_anodes=self.diode_orientation,
                 interval=0.02,  # Debounce time in floating point seconds
                 max_events=64,
             ),
             RotaryioEncoder(
                 pin_a=self.encoder_a,
                 pin_b=self.encoder_b,
-                # optional
                 divisor=2,
             ),
         ]

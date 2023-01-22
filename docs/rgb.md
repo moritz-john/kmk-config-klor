@@ -40,7 +40,7 @@ klor_speaker = False
 If you need to address LEDs individually (so change specific LEDs to a different color) use [`peg_rgb`](http://kmkfw.io/docs/peg_rgb_matrix/) in any other case use the more powerful [`basic_rgb`](http://kmkfw.io/docs/rgb/) implementation.  
 *I would recommend going with `basic_rgb`.*
 
-## Customize your RGB expierience
+## Customize your RGB experience
 ### Basic RGB
 
 *You can find the code in your `kb.py` file:*
