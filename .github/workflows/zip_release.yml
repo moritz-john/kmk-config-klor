@@ -16,7 +16,7 @@ jobs:
       - uses: vimtor/action-zip@v1
         with:
           files: firmware/lib firmware/utilities firmware/kb.py firmware/main.py
-          recursive: false
+          recursive: true
           dest: klor_kmk_firmware.zip
       - name: Upload Release
         uses: ncipollo/release-action@v1.12.0
