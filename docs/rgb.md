@@ -46,7 +46,7 @@ If you need to address LEDs individually (so change specific LEDs to a different
 *You can find the code in your `kb.py` file:*
 
 ```py title="kb.py"
---8<-- './kb.py:rgb'
+--8<-- 'firmware/kb.py:rgb'
 ```
 
 Consider changing `hue_default`, `sat_default` or `val_default`. Use a value in the range `0-255`.  
@@ -59,7 +59,7 @@ You can also change the colors and much more at runtime via [RGB keycodes](http:
 *You can find the code in your `kb.py` file:*
 
 ```py title="kb.py"
---8<-- './kb.py:rgbdata'
+--8<-- 'firmware/kb.py:rgbdata'
 ```
 
 Each `[R, G, B]` list matches a KLOR key as seen in `led_positions`. Keep in mind that some KLOR variants have less keys.  
