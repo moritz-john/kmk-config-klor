@@ -73,9 +73,9 @@ oled_ext = Oled(
 ## Possible Tweaks
 The `'SSD1306 128x64 pixel OLED Displays'` is not offically supported by KMK, only the `'128x32 pixel'` version is.
 
-If you want to display photos on your OLED as per [this instructions](http://kmkfw.io/docs/peg_oled_display#photos) you might need to uncomment `# oHeight=64,` in the OLED code block. 
+If you want to display photos on your OLED as per [this instructions](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md#photos) you might need to uncomment `# oHeight=64,` in the OLED code block. 
 
 !!! warning
     Displaying photos on the KLOR's OLED has not been tested and might require additonal code changes.
 
-If you uncomment `# oHeight=64,` while displaying [text](http://kmkfw.io/docs/peg_oled_display#text) the font becomes smaller, so you can display more words, but everything is moved to the top left corner. 
+If you uncomment `# oHeight=64,` while displaying [text](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_oled_display.md#text) the font becomes smaller, so you can display more words, but everything is moved to the top left corner. 

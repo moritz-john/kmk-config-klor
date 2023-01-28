@@ -4,12 +4,12 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 
 # fmt: off
-# ↓↓↓ EDIT CONFIG HERE ↓↓↓
+# ↓ EDIT CONFIG HERE ↓
 klor_variant = "saegewerk"  # Options: "polydactyl", "konrad", "yubitsume", "saegewerk"
 klor_rgb = "none"           # Options: "basic_rgb", "peg_rgb", "none"
 klor_oled = False           # Options: True, False
 klor_speaker = False        # Options: True, False
-# ↑↑↑ EDIT CONFIG HERE ↑↑↑
+# ↑ EDIT CONFIG HERE ↑
 # fmt: on
 
 keyboard = KMKKeyboard(klor_variant, klor_rgb, klor_oled, klor_speaker)
