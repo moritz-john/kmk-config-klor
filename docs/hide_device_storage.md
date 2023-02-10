@@ -16,7 +16,7 @@ I would recommend following these steps **after** you finished setting up your K
 !!! warning
     **After replacing the `boot.py` file you need to hold the green key on either left or right side when connecting the keyboard to your computer or rebooting it via reset button in order to see the USB storage.**
 
-![Image title](images/hold_key_device_storage.svg)
+![Image title](images/hold_key_klor.svg)
 
 ## Microcontroller support
 `boot.py` is designed to work with the **SparkFun Pro Micro RP2040** but you can update this line in `boot.py` to [any supported microcontroller:](https://github.com/KMKfw/kmk_firmware/tree/master/kmk/quickpin/pro_micro)
