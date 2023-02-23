@@ -7,9 +7,6 @@ import usb_hid
 
 from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 
-# This is from the base kmk boot.py
-supervisor.set_next_stack_limit(4096 + 4096)
-
 # If this key is held during boot, don't run the code which hides the storage and disables serial
 # To use another key just count its row and column and use those pins
 # You can also use any other pins not already used in the matrix and make a button just for accesing your storage
