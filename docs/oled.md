@@ -21,7 +21,7 @@ In order to use OLEDs you have to install two libraries into your keyboard's `'l
     3. Repeat for your other keyboard half
 
 === "Locate & exctract files yourself" 
-    Download: [adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
+    Download: [adafruit-circuitpython-bundle-8.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
 
     1. Copy the **folder** called `'adafruit_display_text'` and the **file** called `'adafruit_displayio_ssd1306.mpy'` out of `'adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD/lib/'`
     2. Paste the file into the `'lib'` folder on your microcontroller

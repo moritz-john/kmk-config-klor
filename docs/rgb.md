@@ -19,7 +19,7 @@ In order to use RGB you have to install one library into your keyboard's `'lib'`
     3. Repeat for your other keyboard half  
 
 === "Locate & exctract files yourself" 
-    Download: [adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
+    Download: [adafruit-circuitpython-bundle-8.x-mpy-YYYYMMDD.zip](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/)
 
     1. Copy the **file** called `'neopixel.mpy'` out of `'adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD/lib/'`  
     2. Paste the file into the `'lib'` folder on your microcontroller  
@@ -82,7 +82,7 @@ rgb_data = [
 You **can't** adjust colors at runtime with `peg_rgb` via keycodes.
 
 ## Add RGB keycodes to your keymap
-Add some keycodes to your keymap in order to control your RGB lighting e.g.: turn it on or off via `KC.RGB_TOG`
+Add some keycodes to your keymap in order to control your RGB lighting e.g.: turn it on or off via ++rgbtog++
 
 === "Basic RGB"
     Use [these keycodes](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/rgb.md#keycodes).

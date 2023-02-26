@@ -7,7 +7,7 @@ hide:
 ---
 
 !!! info
-    This firmware has been tested on **CircuitPython (stable) 7.3.3**
+    This firmware has been tested on **CircuitPython (stable) 8.0.3**
 
 ??? warning "Reset Button Help"
     **Single push reset button:**  

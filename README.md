@@ -1,14 +1,18 @@
+[![Docs Status](https://img.shields.io/badge/docs-ready-green.svg)](https://moritz-john.github.io/kmk-config-klor/)
+
 <p align="center">
   <img alt="KLOR KMK logo" width="500" src="docs/images/klor_kmk.svg">
 </p>
 
-# KMK Firmware for KLOR Keyboard
+# [Documentation & Installation instructions](https://moritz-john.github.io/kmk-config-klor/)
+
+## KMK firmware for KLOR keyboard
 *KLOR is a 36-42 key column-staggered split keyboard. It supports encoders, OLED displays, the SplitKB tenting puck and four different layouts, through break off parts.*
 
-Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)
+Hardware Availability: [PCB & Case Source](https://github.com/GEIGEIGEIST/klor)  
 Keyboard Designer: [GEIST](https://github.com/GEIGEIGEIST)
 
-# [Documentation & Installation instructions](https://moritz-john.github.io/kmk-config-klor/)
+
 ### Modules/extensions implemented
 - [Split](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/split_keyboards.md)
 - [Layers](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/layers.md)

@@ -8,6 +8,8 @@ hide:
 
 ![KLOR_KMK_LOGO](./images/klor_kmk.svg){ width="400"}
 
+A comprehensive guide of my KMK firmware[^1] for the KLOR keyboard[^2].
+
 ## Installation
 
 Follow these steps:  
@@ -32,4 +34,5 @@ from kmk.quickpin.pro_micro.sparkfun_promicro_rp2040 import pinout as pins
 
 ### [Hide device storage by default](./hide_device_storage.md)
 
-
+[^1]: [KMK](https://github.com/KMKfw/kmk_firmware) is a feature-rich and beginner-friendly firmware for computer keyboards written and configured in [CircuitPython](https://circuitpython.org/)
+[^2]: An open source keyboard designed by [GEIST](https://github.com/GEIGEIGEIST)
