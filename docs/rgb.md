@@ -82,7 +82,7 @@ rgb_data = [
 You **can't** adjust colors at runtime with `peg_rgb` via keycodes.
 
 ## Add RGB keycodes to your keymap
-Add some keycodes to your keymap in order to control your RGB lighting e.g.: turn it on or off via `KC.RGB_TOG`
+Add some keycodes to your keymap in order to control your RGB lighting e.g.: turn it on or off via ++rgbtog++
 
 === "Basic RGB"
     Use [these keycodes](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/rgb.md#keycodes).

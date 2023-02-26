@@ -1,4 +1,3 @@
-
 site_url: https://moritz-john.github.io/kmk-config-klor/
 repo_url: https://github.com/moritz-john/kmk-config-klor
 
@@ -14,8 +13,8 @@ theme:
   name: material
   palette: 
     scheme: slate
-    primary: blue grey
-    accent: deep orange
+    primary: black
+    accent: green
   logo: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
@@ -27,26 +26,34 @@ theme:
     - navigation.footer
 
 markdown_extensions:
-# align images, add captions to images 
+  # Images:
   - attr_list
   - md_in_html
-# syntax highlighting
+  # Code:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-# content tabs
   - pymdownx.superfences
+  # Content tabs
   - pymdownx.tabbed:
-      alternate_style: true 
-# admonitions
+      alternate_style: true
+  # Admonitions:
   - admonition
   - pymdownx.details
-# lists
+  # Tables:
+  - tables
+  # Footnoes:
+  - footnotes
+  # Lists
   - def_list
-
-extra_css:
-  - stylesheets/extra.css
+  # Keys:
+  - pymdownx.keys:
+      key_map: {
+                "rgbtog": "KC.RGB_TOG", 
+               }
+# extra_css:
+#   - stylesheets/extra.css
 
 plugins:
   - social
@@ -55,5 +62,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/moritz-john/kmk-config-klor
+
+copyright: Created and maintained by Moritz John
 
 
