@@ -10,10 +10,11 @@ hide:
 
 !!! tip "tl;dr"
         Add libraries to your keyboard, set `:::py klor_oled = True` and customize your OLED text
-## Add the necessary libraries
-In order to use OLEDs you have to install two libraries into your keyboard's `'lib'` folder:
+## Necessary libraries
+**Make sure that you added the two libraries into your keyboard's `'lib'` folder:**    
+`'adafruit_display_text'` *(folder)* & `'adafruit_displayio_ssd1306.mpy'` *(file)*
 
-=== "Github Releases"
+<!-- === "Github Releases"
     You can find the necessary libraries included in the [`klor_kmk_firmware.zip` release](https://github.com/moritz-john/kmk-config-klor/releases)
 
     1. Copy the **folder** called `'adafruit_display_text'` and the **file** called `'adafruit_displayio_ssd1306.mpy'` out of `'klor_kmk_firmware/lib'`
@@ -25,7 +26,7 @@ In order to use OLEDs you have to install two libraries into your keyboard's `'l
 
     1. Copy the **folder** called `'adafruit_display_text'` and the **file** called `'adafruit_displayio_ssd1306.mpy'` out of `'adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD/lib/'`
     2. Paste the file into the `'lib'` folder on your microcontroller
-    3. Repeat for your other keyboard half
+    3. Repeat for your other keyboard half -->
 
 ![Image title](images/oled_lib.png){ width="700"}
 

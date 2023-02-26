@@ -8,10 +8,12 @@ hide:
 
 !!! tip "tl;dr"
     Add library to your keyboard drive, set `:::py klor_rgb = "basic_rgb"` **or** `:::py "peg_rgb"`, customize your RGB code and add RGB keycodes to your keymap to control your lighting.
-## Add the necessary library
-In order to use RGB you have to install one library into your keyboard's `'lib'` folder:
+    
+## Necessary library
+**Make sure that you added the library into your keyboard's `'lib'` folder:**   
+`'neopixel.mpy'` *(file)*
 
-=== "Github Releases"
+<!-- === "Github Releases"
     You can find the necessary library included in the [`klor_kmk_firmware.zip` release](https://github.com/moritz-john/kmk-config-klor/releases)
 
     1. Copy the **file** called `'neopixel.mpy'` out of `'klor_kmk_firmware/lib'`  
@@ -23,7 +25,7 @@ In order to use RGB you have to install one library into your keyboard's `'lib'`
 
     1. Copy the **file** called `'neopixel.mpy'` out of `'adafruit-circuitpython-bundle-7.x-mpy-YYYYMMDD/lib/'`  
     2. Paste the file into the `'lib'` folder on your microcontroller  
-    3. Repeat for your other keyboard half  
+    3. Repeat for your other keyboard half   -->
 
 ![Image title](images/rgb_lib.png){ width="700"}
 
@@ -38,7 +40,7 @@ klor_speaker = False
 ```
 ### Basic RGB vs PEG RGB
 If you need to address LEDs individually (so change specific LEDs to a different color) use [`peg_rgb`](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/peg_rgb_matrix.md) in any other case use the more powerful [`basic_rgb`](https://github.com/KMKfw/kmk_firmware/blob/master/docs/en/rgb.md) implementation.  
-*I would recommend going with `basic_rgb`.*
+> I would recommend going with `basic_rgb`.
 
 ## Customize your RGB experience
 ### Basic RGB
