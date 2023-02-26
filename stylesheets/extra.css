@@ -1,0 +1,17 @@
+/* Move table of contents to the left side */
+.md-sidebar--secondary {
+    /* order: 0; */
+  }
+
+/* Logo text */
+.md-ellipsis {
+    /* font-size: 140%; */
+
+}
+
+/* Top nav link text */
+.md-tabs__link {
+    /* font-size: 160%; */
+    /* color: black; */
+}
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 76.797129 107.78398"
+   version="1.1"
+   id="svg24"
+   sodipodi:docname="kmk_logo_small.svg"
+   width="76.797127"
+   height="107.78398"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview26"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#38a3a5;}.cls-2{fill:#63c196;}.cls-3{fill:#cbe6c6;}.cls-4{fill:#91cd91;}.cls-5{fill:#a7a9ac;}</style>
+  </defs>
+  <g
+     id="Layer_2"
+     data-name="Layer 2">
+    <g
+       id="Layer_1-2"
+       data-name="Layer 1">
+      <rect
+         class="cls-1"
+         width="17.05933"
+         height="107.78398"
+         rx="8.5296602"
+         id="rect6"
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
+      <path
+         class="cls-2"
+         d="m 4.26627,106.25185 v 0 A 8.52966,8.52966 0 0 1 1.14418,94.60011 L 44.66874,20.3556 a 8.52965,8.52965 0 0 1 11.65173,-3.12207 v 0 a 8.52966,8.52966 0 0 1 3.12207,11.65173 L 15.918,103.12977 a 8.52966,8.52966 0 0 1 -11.65173,3.12208 z"
+         id="path8"
+         style="fill:#ffffff" />
+      <path
+         class="cls-3"
+         d="m 75.45457,90.19653 v 0 A 8.52965,8.52965 0 0 1 63.67392,92.79005 L 36.15517,72.01905 A 8.52965,8.52965 0 0 1 33.56165,60.2384 v 0 A 8.52966,8.52966 0 0 1 45.3423,57.64492 l 27.51875,20.771 a 8.52965,8.52965 0 0 1 2.59352,11.78061 z"
+         id="path10"
+         style="fill:#ffffff" />
+      <path
+         class="cls-4"
+         d="m 37.47788,72.45663 v 0 a 8.52965,8.52965 0 0 1 -5.28793,-10.842 L 43.9898,21.84431 a 8.52966,8.52966 0 0 1 10.84195,-5.28793 v 0 a 8.52966,8.52966 0 0 1 5.28793,10.842 L 48.31983,67.1687 a 8.52964,8.52964 0 0 1 -10.84195,5.28793 z"
+         id="path12"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>
